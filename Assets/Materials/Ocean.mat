@@ -178,6 +178,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SoftnessTransition: 0.02
     - _SpecularHighlights: 1
+    - _Speed: 0
     - _SrcBlend: 1
     - _Surface: 0
     - _Tiling: 0
@@ -186,7 +187,7 @@ Material:
     - _VariationTiling: 1
     - _WaterSmoothness: 1
     - _WaterTransparent: -1.55
-    - _WavesHeight: 0.35
+    - _WavesHeight: 0.15
     - _WavesSpeed: 1.5
     - _WavesTiling: 80
     - _WavesWidth: 24.8
@@ -196,14 +197,14 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DepthColor: {r: 0.028125001, g: 0.40781268, b: 0.6, a: 1}
+    - _DepthColor: {r: 0, g: 0.39863035, b: 0.6, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FoamColor: {r: 0.84589034, g: 0.92831045, b: 0.95, a: 1}
     - _FoamTiling: {r: 120, g: 120, b: 0, a: 0}
     - _FogColor: {r: 1, g: 1, b: 1, a: 1}
     - _IntersectionColor: {r: 1, g: 1, b: 1, a: 1}
     - _NormalPanningSpeeds: {r: 0, g: 0, b: 0, a: 0}
-    - _ShallowColor: {r: 0.3, g: 1, b: 1, a: 1}
+    - _ShallowColor: {r: 0.19999999, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &8727605763976096706
