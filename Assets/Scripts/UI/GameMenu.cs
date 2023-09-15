@@ -38,9 +38,9 @@ public class GameMenu : MonoBehaviour
 
     public void ShowValues()
     {
-        GoldValue.text = "Gold:" + StructValues.Gold.ToString();
-        MetallValue.text = "Metall:" +StructValues.Metall.ToString();
-        WoodValue.text = "Wood:" + StructValues.Wood.ToString();
-        FishValue.text = "Fish:" + StructValues.Fish.ToString();
+        GoldValue.text = "Gold:" + StructCurrency.Gold.ToString();
+        MetallValue.text = "Metall:" +StructCurrency.Metall.ToString();
+        WoodValue.text = "Wood:" + StructCurrency.Wood.ToString();
+        FishValue.text = "Fish:" + StructCurrency.Fish.ToString();
     }
 }
