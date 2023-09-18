@@ -10,14 +10,29 @@ public class ShipController : MonoBehaviour
 
     [Header("Main Ship rotation:")]
     [Range(1f, 50f)][SerializeField] private float _rotateSpeed = 1f;
-    private float x = 0f;
+    
+    private float _rotateX = 0f;
+    [Header("Main Ship Physic:")]
+    private Rigidbody _rigidbody;
+    [SerializeField] private float _forwardForce;
+
+    private void Awake()
+    {
+        _rigidbody = GetComponent<Rigidbody>();
+    }
 
     void Update()
     {
         // Накопление ускорения:
         AccelerationCalculate();
         // Перемещение обьекта
-        ObjectMover();
+        //ObjectMover();
+
+        if (Input.GetKey(KeyCode.W))
+            ObjectPhysMover(-transform.right);
+        if (Input.GetKey(KeyCode.S))
+            ObjectPhysMover(transform.right);
+
 
         // Вращение вправо-влево:
         if (Input.GetKey(KeyCode.A))
@@ -60,11 +75,19 @@ public class ShipController : MonoBehaviour
     }
 
     /// <summary>
-    /// Функция реализации перемещения камеры
+    /// Функция реализации перемещения по трансформу
     /// </summary>
     private void ObjectMover()
     {
         gameObject.transform.position += gameObject.transform.forward * _movementAcceleration * Time.deltaTime;
+    }
+
+    /// <summary>
+    /// Функция реализации перемещения по физике
+    /// </summary>
+    private void ObjectPhysMover(Vector3 axis)
+    {
+        _rigidbody.AddForce(axis * _forwardForce);
     }
 
     /// <summary>
@@ -75,13 +98,13 @@ public class ShipController : MonoBehaviour
 
         if (_movementAcceleration >= 0)
         {
-            x += directionMultiplier * _rotateSpeed * Time.deltaTime;
-            gameObject.transform.eulerAngles = new Vector3(0f, x, 0f);
+            _rotateX += directionMultiplier * _rotateSpeed * Time.deltaTime;
+            gameObject.transform.eulerAngles = new Vector3(0f, _rotateX, 0f);
         }
         if (_movementAcceleration < 0)
         {
-            x += -directionMultiplier * _rotateSpeed * Time.deltaTime;
-            gameObject.transform.eulerAngles = new Vector3(0f, x, 0f);
+            _rotateX += -directionMultiplier * _rotateSpeed * Time.deltaTime;
+            gameObject.transform.eulerAngles = new Vector3(0f, _rotateX, 0f);
         }
     }
 }

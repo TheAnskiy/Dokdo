@@ -127,9 +127,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaAreaMultiplier: 4
+    - _AlphaAreaMultiplier: 3
     - _AlphaClip: 0
     - _BigTiling: 1.92
+    - _BigTilingTex: 0.08
     - _Blend: 0
     - _Brightness: 1
     - _BumpScale: 1
@@ -139,7 +140,7 @@ Material:
     - _CutOffFoam: 11.77
     - _Cutoff: 0.5
     - _Depth: 1
-    - _DepthShallow: -46.5
+    - _DepthShallow: -44
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _Displacement: 0.15
@@ -164,6 +165,7 @@ Material:
     - _MacroContrast: 2.5
     - _MacroStrenge: 0.985
     - _MedTiling: 0.48
+    - _MedTilingTex: 0.24
     - _Metallic: 0
     - _NormalStrength: 1
     - _OcclusionStrength: 1
@@ -172,8 +174,9 @@ Material:
     - _QueueControl: 1
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _ShallowTransparent: 0.6
+    - _ShallowTransparent: 0.882
     - _SmallTiling: 0.96
+    - _SmallTilingTex: 0.55
     - _Smoothness: 0.49
     - _SmoothnessTextureChannel: 0
     - _SoftnessTransition: 0.02
@@ -185,10 +188,12 @@ Material:
     - _Transparent: 0.99
     - _VariationStrength: 0.5
     - _VariationTiling: 1
-    - _WaterSmoothness: 1
+    - _WaterSmoothness: 7.85
     - _WaterTransparent: -1.55
+    - _WavesAmplitude: 3
+    - _WavesFrequancy: 1.5
     - _WavesHeight: 0.15
-    - _WavesSpeed: 1.5
+    - _WavesSpeed: 0.5
     - _WavesTiling: 80
     - _WavesWidth: 24.8
     - _WorkflowMode: 1
