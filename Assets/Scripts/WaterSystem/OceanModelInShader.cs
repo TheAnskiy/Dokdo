@@ -12,11 +12,11 @@ public class OceanModelInShader: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_oceanMaterial.GetFloat("_WavesAmplitude") != waveAmplitude)
-            waveAmplitude = _oceanMaterial.GetFloat("_WavesAmplitude");
-        if (_oceanMaterial.GetFloat("_WavesSpeed") != waveSpeed)
-            waveSpeed = _oceanMaterial.GetFloat("_WavesSpeed");
-        if (_oceanMaterial.GetFloat("_WavesFrequancy") != waveFrequancy)
-            waveFrequancy = _oceanMaterial.GetFloat("_WavesFrequancy");
+        if (_oceanMaterial.GetFloat("_AmplitudeWaves") != waveAmplitude)
+            waveAmplitude = _oceanMaterial.GetFloat("_AmplitudeWaves");
+        if (_oceanMaterial.GetFloat("_SpeedWaves") != waveSpeed)
+            waveSpeed = _oceanMaterial.GetFloat("_SpeedWaves");
+        if (_oceanMaterial.GetFloat("_FrequancyWaves") != waveFrequancy)
+            waveFrequancy = _oceanMaterial.GetFloat("_FrequancyWaves");
     }
 }

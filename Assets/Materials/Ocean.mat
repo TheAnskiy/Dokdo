@@ -101,6 +101,18 @@ Material:
         m_Texture: {fileID: 2800000, guid: 1d3ca884241ea1f49a0524b2d21be65a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _TextureFoam:
+        m_Texture: {fileID: 2800000, guid: 1d3ca884241ea1f49a0524b2d21be65a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureMacro:
+        m_Texture: {fileID: 2800000, guid: 1d3ca884241ea1f49a0524b2d21be65a, type: 3}
+        m_Scale: {x: 100, y: 100}
+        m_Offset: {x: 0, y: 0}
+    - _TextureNormals:
+        m_Texture: {fileID: 2800000, guid: 0c4291906b88ad848aed17679180f93d, type: 3}
+        m_Scale: {x: 0.001, y: 0.001}
+        m_Offset: {x: 0, y: 0}
     - _VariationTexture:
         m_Texture: {fileID: 2800000, guid: fdc550c2d58f9174f92a8f68df6ff0bd, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -129,6 +141,8 @@ Material:
     m_Floats:
     - _AlphaAreaMultiplier: 3
     - _AlphaClip: 0
+    - _AmplitudeWaves: 0.96
+    - _AreaTransparent: 1.2
     - _BigTiling: 1.92
     - _BigTilingTex: 0.08
     - _Blend: 0
@@ -136,14 +150,16 @@ Material:
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
+    - _ContrastMacro: 5
     - _Cull: 2
-    - _CutOffFoam: 11.77
+    - _CutOffFoam: 7.5
     - _Cutoff: 0.5
     - _Depth: 1
-    - _DepthShallow: -44
+    - _DepthShallow: -17.7
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _Displacement: 0.15
+    - _DistanceFoam: 40
     - _DstBlend: 0
     - _EnvironmentReflections: 1
     - _Foam: 0.03
@@ -156,6 +172,7 @@ Material:
     - _FoamThreshold: 0
     - _FoamTiling: 125
     - _FogThreshold: 0
+    - _FrequancyWaves: 0.44
     - _FresnelPower: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
@@ -169,31 +186,42 @@ Material:
     - _Metallic: 0
     - _NormalStrength: 1
     - _OcclusionStrength: 1
+    - _OffsetNormals: 0.21
     - _Parallax: 0.005
     - _Power: 0.16
+    - _PowerMacro: 0.99
     - _QueueControl: 1
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _ShallowTransparent: 0.882
+    - _ShallowTransparent: 0.45
     - _SmallTiling: 0.96
     - _SmallTilingTex: 0.55
     - _Smoothness: 0.49
     - _SmoothnessTextureChannel: 0
     - _SoftnessTransition: 0.02
+    - _SoftnessTransitionColor: 0.042
     - _SpecularHighlights: 1
     - _Speed: 0
+    - _SpeedFoam: 0.02
+    - _SpeedWaves: 0.25
     - _SrcBlend: 1
+    - _StrengeNormals: 1
     - _Surface: 0
     - _Tiling: 0
+    - _TilingFoam: 150
+    - _TilingNormals: 0
+    - _TilingTex_Big: 0.08
+    - _TilingTex_Med: 0.24
+    - _TilingTex_Small: 0.55
     - _Transparent: 0.99
     - _VariationStrength: 0.5
     - _VariationTiling: 1
-    - _WaterSmoothness: 7.85
+    - _WaterSmoothness: 26.4
     - _WaterTransparent: -1.55
-    - _WavesAmplitude: 3
+    - _WavesAmplitude: 10.39
     - _WavesFrequancy: 1.5
     - _WavesHeight: 0.15
-    - _WavesSpeed: 0.5
+    - _WavesSpeed: 0.15
     - _WavesTiling: 80
     - _WavesWidth: 24.8
     - _WorkflowMode: 1
@@ -202,6 +230,9 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _ColorDepth: {r: 0, g: 0.58988565, b: 0.888, a: 1}
+    - _ColorFoam: {r: 1, g: 1, b: 1, a: 1}
+    - _ColorShallow: {r: 0.25, g: 0.8125, b: 1, a: 1}
     - _DepthColor: {r: 0, g: 0.39863035, b: 0.6, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FoamColor: {r: 0.84589034, g: 0.92831045, b: 0.95, a: 1}

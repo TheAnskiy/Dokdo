@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
+using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Buoy : MonoBehaviour
 {
@@ -26,18 +29,32 @@ public class Buoy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _rigidBody.AddForceAtPosition(Physics.gravity / _countBuoy, transform.position, ForceMode.Acceleration);
+        _rigidBody.AddForceAtPosition(Physics.gravity * 2 / _countBuoy, transform.position, ForceMode.Acceleration);
 
-        _waveHeight = WaveGenerator(gameObject.transform.position.x, gameObject.transform.position.y);
+        _waveHeight = WaveGenerator();
         if (transform.position.y < _waveHeight)
             Floating();
     }
 
-    public float WaveGenerator(float x, float y)
+    public float WaveGenerator()
     {
-        // Двойная синуисоидальная волна:
-        return _modelInShader.waveAmplitude * Mathf.Sin(x * _modelInShader.waveFrequancy - _modelInShader.waveSpeed * Time.time); /*+ _modelInShader.waveAmplitude * Mathf.Sin(y * _modelInShader.waveFrequancy - _modelInShader.waveSpeed * Time.time);*/
+        // Гармоническая волна:
+        Debug.Log(_modelInShader.waveFrequancy);
+        return (_modelInShader.waveAmplitude * Mathf.Sin(transform.position.x * _modelInShader.waveFrequancy + _modelInShader.waveSpeed * Time.time)) + 
+            (_modelInShader.waveAmplitude * Mathf.Sin(transform.position.z * _modelInShader.waveFrequancy + _modelInShader.waveSpeed * Time.time));
     }
+
+    //public Vector3 GerstnerWaveGenerator(Vector3 position, Vector2 direction, float steepness, float wavelength, float speed, float timeSinceStart)
+    //{
+    //    float k = 2 * Mathf.PI / wavelength;
+
+    //    Vector2 normilizedDirection = direction.normalized;
+
+    //    float f = k * Vector2.Dot(normilizedDirection, new Vector2(position.x, position.z)) - (speed *timeSinceStart);
+    //    float a = steepness / k;
+
+    //    return new Vector3(normilizedDirection.x * a * Mathf.Cos(f), a * Mathf.Sin(f), normilizedDirection.y * a * Mathf.Cos(f));
+    //}
 
     void Floating()
     {
