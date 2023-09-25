@@ -486,6 +486,21 @@
 {
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "18b0a6dcfff542ecb106bda5fd9efb8f",
+    "m_Id": 1,
+    "m_DisplayName": "HeightWave",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "HeightWave",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "252eeae48bf84dc2b2ea4b6f6d6eb194",
     "m_Id": 2,
     "m_DisplayName": "Cosine Time",
@@ -819,21 +834,6 @@
     "m_CustomColors": {
         "m_SerializableColors": []
     }
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
-    "m_ObjectId": "85215cb2e40d4b5b86d124d695b9839a",
-    "m_Id": 1,
-    "m_DisplayName": "Displacement",
-    "m_SlotType": 0,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Displacement",
-    "m_StageCapability": 3,
-    "m_Value": 0.0,
-    "m_DefaultValue": 0.0,
-    "m_Labels": []
 }
 
 {
@@ -1359,7 +1359,7 @@
     },
     "m_Slots": [
         {
-            "m_Id": "85215cb2e40d4b5b86d124d695b9839a"
+            "m_Id": "18b0a6dcfff542ecb106bda5fd9efb8f"
         }
     ],
     "synonyms": [],

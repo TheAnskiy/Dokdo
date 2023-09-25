@@ -15,7 +15,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -141,8 +141,9 @@ Material:
     m_Floats:
     - _AlphaAreaMultiplier: 3
     - _AlphaClip: 0
-    - _AmplitudeWaves: 0.96
+    - _AmplitudeWaves: 2
     - _AreaTransparent: 1.2
+    - _AreaTransparentShallow: 1
     - _BigTiling: 1.92
     - _BigTilingTex: 0.08
     - _Blend: 0
@@ -150,16 +151,17 @@ Material:
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _ContrastMacro: 5
+    - _ContrastMacro: 3
     - _Cull: 2
+    - _CutDistanceFoam: 8
     - _CutOffFoam: 7.5
     - _Cutoff: 0.5
     - _Depth: 1
-    - _DepthShallow: -17.7
+    - _DepthShallow: -115
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _Displacement: 0.15
-    - _DistanceFoam: 40
+    - _DistanceFoam: 20
     - _DstBlend: 0
     - _EnvironmentReflections: 1
     - _Foam: 0.03
@@ -172,12 +174,19 @@ Material:
     - _FoamThreshold: 0
     - _FoamTiling: 125
     - _FogThreshold: 0
-    - _FrequancyWaves: 0.44
+    - _FrequancyWaves: 54.1
     - _FresnelPower: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _HeightWaves: 1.5
     - _IntersectionThreshold: 0
+    - _Lenght_1: 15
+    - _Lenght_2: 1
+    - _Lenght_3: 0.1
+    - _Lenght_Based_Wave: 100
+    - _Lenght_Micro_Wave: 25
+    - _Lenght_Middle_Wave: 50
     - _MacroBrightness: 0.2
     - _MacroContrast: 2.5
     - _MacroStrenge: 0.985
@@ -189,9 +198,10 @@ Material:
     - _OffsetNormals: 0.21
     - _Parallax: 0.005
     - _Power: 0.16
-    - _PowerMacro: 0.99
-    - _QueueControl: 1
+    - _PowerMacro: 0.98
+    - _QueueControl: 0
     - _QueueOffset: 0
+    - _RangeRandomize: 0.5
     - _ReceiveShadows: 1
     - _ShallowTransparent: 0.45
     - _SmallTiling: 0.96
@@ -199,25 +209,52 @@ Material:
     - _Smoothness: 0.49
     - _SmoothnessTextureChannel: 0
     - _SoftnessTransition: 0.02
-    - _SoftnessTransitionColor: 0.042
+    - _SoftnessTransitionColor: 0.0082
     - _SpecularHighlights: 1
     - _Speed: 0
-    - _SpeedFoam: 0.02
-    - _SpeedWaves: 0.25
+    - _SpeedFoam: 0.003
+    - _SpeedMacro: 0.0007
+    - _SpeedWaves: 1
+    - _Speed_1: 0.5
+    - _Speed_2: 0.5
+    - _Speed_3: 0.5
+    - _Speed_Based_Wave: 0.25
+    - _Speed_Micro_Wave: 0.5
+    - _Speed_Middle_Wave: 0.5
     - _SrcBlend: 1
+    - _Stepness: 0.015
+    - _Stepness_1: 0
+    - _Stepness_2: 0
+    - _Stepness_3: 0.15
+    - _Stepness_Based_Wave: 0.18
+    - _Stepness_Micro_Wave: 0.2
+    - _Stepness_Middle_Wave: 0.13
     - _StrengeNormals: 1
     - _Surface: 0
     - _Tiling: 0
-    - _TilingFoam: 150
+    - _TilingFoam: 200
     - _TilingNormals: 0
+    - _TilingRandomize: 60
     - _TilingTex_Big: 0.08
     - _TilingTex_Med: 0.24
     - _TilingTex_Small: 0.55
+    - _TilingWaves: 100
+    - _Tiling_1: 0.01
+    - _Tiling_2: 0.32
+    - _Tiling_3: 0.64
+    - _Tiling_BigMacro: 0.08
+    - _Tiling_MedMacro: 0.24
+    - _Tiling_SmallMacro: 0.55
     - _Transparent: 0.99
+    - _TransparentShallow: 0.5
     - _VariationStrength: 0.5
     - _VariationTiling: 1
-    - _WaterSmoothness: 26.4
+    - _WaterSmoothness: 0.2
     - _WaterTransparent: -1.55
+    - _WaveLenght: 200
+    - _WaveLenght_1: 6
+    - _WaveLenght_2: 1
+    - _WaveLenght_3: 5
     - _WavesAmplitude: 10.39
     - _WavesFrequancy: 1.5
     - _WavesHeight: 0.15
@@ -230,10 +267,17 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ColorDepth: {r: 0, g: 0.58988565, b: 0.888, a: 1}
-    - _ColorFoam: {r: 1, g: 1, b: 1, a: 1}
-    - _ColorShallow: {r: 0.25, g: 0.8125, b: 1, a: 1}
+    - _ColorDepth: {r: 0, g: 0.39999992, b: 0.6, a: 1}
+    - _ColorFoam: {r: 0.95, g: 0.95, b: 0.95, a: 1}
+    - _ColorShallow: {r: 0.050000012, g: 0.7612565, b: 1, a: 1}
     - _DepthColor: {r: 0, g: 0.39863035, b: 0.6, a: 1}
+    - _Direction: {r: 1, g: 0, b: 0, a: 0}
+    - _Direction_1: {r: 1, g: -1, b: 0, a: 0}
+    - _Direction_2: {r: 1, g: -1, b: 0, a: 0}
+    - _Direction_3: {r: 1, g: 0, b: 0, a: 0}
+    - _Direction_Based_Wave: {r: 1, g: 1, b: 0, a: 0}
+    - _Direction_Micro_Wave: {r: 1, g: 0.69, b: 0, a: 0}
+    - _Direction_Middle_Wave: {r: 1, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FoamColor: {r: 0.84589034, g: 0.92831045, b: 0.95, a: 1}
     - _FoamTiling: {r: 120, g: 120, b: 0, a: 0}
