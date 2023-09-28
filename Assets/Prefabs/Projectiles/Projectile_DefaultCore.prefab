@@ -130,7 +130,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e24f0e46d91c364d90019f8892a5e58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shotImpulse: 250
+  _speed: 1
+  _lifeTime: 4
+  _hitFx: []
   _hitsFX:
   - {fileID: 8177694572514537720, guid: 5a17719b60da1e74dbda20f567e87d09, type: 3}
   - {fileID: 8177694572514537720, guid: ef5153f3220d6524b9ec64b10fe3be91, type: 3}

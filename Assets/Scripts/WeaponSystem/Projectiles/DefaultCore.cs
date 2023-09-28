@@ -1,32 +1,26 @@
-using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class DefaultCore : MonoBehaviour
 {
-    [SerializeField] public float _shotImpulse = 1;
+    [SerializeField] private float _speed = 1.0f;
+    [SerializeField] private float _lifeTime = 1.0f;
+
     [Tooltip("Список эффектов: Нулевой - остальное; Первый - вода; Второй - враги")]
     [SerializeField] private GameObject[] _hitsFX;
-    private GameObject Parent;
+
     private Rigidbody _rigidBody;
 
     void Awake()
     {
-        Parent = GameObject.Find("Projectiles");
         _rigidBody = GetComponent<Rigidbody>();
     }
 
     private void Start()
     {
-        _rigidBody.AddForce(gameObject.transform.right * _shotImpulse, ForceMode.Impulse);
-        StartCoroutine(Killer());
-    }
+        _rigidBody.AddForce(gameObject.transform.forward * _speed, ForceMode.VelocityChange);
 
-    // Не произошло столкновения
-    IEnumerator Killer()
-    {
-        gameObject.transform.SetParent(Parent.transform, true);
-        yield return new WaitForSeconds(4f);
-        Destroy(gameObject);
+        Destroy(gameObject, _lifeTime);
     }
 
     // Произошло столкновение
@@ -46,4 +40,10 @@ public class DefaultCore : MonoBehaviour
         }
         Destroy(gameObject);
     }
+
+    public void SetSpeed(float newSpeed)
+    {
+        _speed = newSpeed;
+    }
+
 }
