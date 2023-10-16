@@ -1,12 +1,11 @@
 using UnityEngine;
 
-public class Buoy : MonoBehaviour
+public class BuoySingle : MonoBehaviour
 {
-    [SerializeField] private Rigidbody _rigidBody;
-    [SerializeField] private bool _isSide;
+    private Rigidbody _rigidBody;
 
-    [HideInInspector] public float _strengeFloating = 3;
-    [HideInInspector] public float _depthBeforeSubmerged = 1.5f;
+    [SerializeField] private float _strengeFloating = 5;
+    [SerializeField] private float _depthBeforeSubmerged = 1f;
 
     private OceanShaderParameters _oceanParameters;
 
@@ -18,8 +17,7 @@ public class Buoy : MonoBehaviour
     void Awake()
     {
         _oceanParameters = FindObjectOfType<OceanShaderParameters>();
-        if (_isSide)
-            _strengeFloating *= 1.5f;
+        _rigidBody = GetComponent<Rigidbody>();
     }
 
     void Update()
