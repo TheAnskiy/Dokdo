@@ -23,7 +23,7 @@ Material:
     m_TexEnvs:
     - _TextureFoam:
         m_Texture: {fileID: 2800000, guid: 1d3ca884241ea1f49a0524b2d21be65a, type: 3}
-        m_Scale: {x: 100, y: 100}
+        m_Scale: {x: 80, y: 80}
         m_Offset: {x: 0, y: 0}
     - _TextureMacro:
         m_Texture: {fileID: 2800000, guid: 1d3ca884241ea1f49a0524b2d21be65a, type: 3}
@@ -47,14 +47,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AreaTransparentShallow: 0.564
+    - _AreaTransparentShallow: 0.45
     - _ContrastMacro: 1
     - _CutDistanceFoam: 20
     - _DepthPower: 6.56
-    - _DepthShallow: -47.74
-    - _DistanceFoam: 45
+    - _DepthShallow: -45
+    - _DistanceFoam: 95
     - _FoamSub: 4.93
-    - _HeightRidges: 21.9
+    - _HeightRidges: 5
     - _HeightRidgesWaves: -0.1
     - _HeightShallow: -1.2
     - _HeightShallowWaves: -4
@@ -66,14 +66,14 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ScaleNoise: 61.1
-    - _ScaleNoiseRiges: 1496.59
+    - _ScaleNoiseRiges: 350
     - _ScaleNoiseShallow: 25
     - _ScaleRidgeNoise: 100
     - _SmoothFoam: 2.59
     - _SmoothWater: 1
-    - _SoftnessRidges: 24
+    - _SoftnessRidges: 12
     - _SoftnessRidgesColor: 14.92
-    - _SoftnessShallow: 30.6
+    - _SoftnessShallow: 25
     - _SoftnessShallowColor: 25
     - _SoftnessTransition: 55
     - _SoftnessTransitionColors: 0.018
@@ -95,14 +95,14 @@ Material:
     - _Tiling_2: 0.24
     - _Tiling_3: 0.55
     - _Tiling_Noise: 5000
-    - _TransparentShallow: 0.3
+    - _TransparentShallow: 0.2
     - _WaterSmoothness: 1
     m_Colors:
-    - _ColorDeep: {r: 0, g: 0.24062501, b: 0.4, a: 1}
+    - _ColorDeep: {r: 0, g: 0.31323534, b: 0.45, a: 1}
     - _ColorDepth: {r: 0, g: 0.29166666, b: 0.5, a: 1}
     - _ColorFoam: {r: 0.9, g: 0.9, b: 0.9, a: 1}
     - _ColorRidges: {r: 1, g: 1, b: 1, a: 1}
-    - _ColorShallow: {r: 0, g: 0.67499995, b: 0.9, a: 1}
+    - _ColorShallow: {r: 0, g: 0.75163394, b: 0.9019608, a: 1}
     - _Direction_Wave_1: {r: 1, g: 0, b: 0, a: 0}
     - _Direction_Wave_2: {r: 1, g: 0.3, b: 0, a: 0}
     - _Direction_Wave_3: {r: 1, g: 0.15, b: 0, a: 0}
