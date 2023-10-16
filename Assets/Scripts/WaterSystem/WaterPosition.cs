@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IWaveHeight : MonoBehaviour
+public class WaterPosition : MonoBehaviour
 {
-    public Material Ocean_M;
+    [SerializeField] private GameObject MainShip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +15,6 @@ public class IWaveHeight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        gameObject.transform.position = new Vector3(MainShip.transform.position.x, transform.position.y, MainShip.transform.position.z);
     }
 }
