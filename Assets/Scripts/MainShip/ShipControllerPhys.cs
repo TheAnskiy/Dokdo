@@ -10,8 +10,6 @@ public class ShipControllerPhys : MonoBehaviour
 
     [SerializeField] private float _maxAngular = 1f;
 
-    private float _rotateX = 0f;
-
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -39,7 +37,7 @@ public class ShipControllerPhys : MonoBehaviour
     /// </summary>
     private void ObjectPhysMover(Vector3 axis)
     {
-        _rigidbody.AddForce(axis * _forwardForce);
+        _rigidbody.AddForce(axis * _forwardForce * Time.deltaTime);
     }
 
 
@@ -48,6 +46,6 @@ public class ShipControllerPhys : MonoBehaviour
     /// </summary>
     private void ObjectPhysRotator(Vector3 axis)
     {
-        _rigidbody.AddTorque(axis * _rotateForce);
+        _rigidbody.AddTorque(axis * _rotateForce * Time.deltaTime);
     }
 }

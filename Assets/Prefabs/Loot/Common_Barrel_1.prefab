@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6acd05ffa7c74c4aba3b4da04e2e4cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _strengeFloating: 10
+  _strengeFloating: 750
   _depthBeforeSubmerged: 1
 --- !u!54 &2945385886138360258
 Rigidbody:
@@ -151,7 +151,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 13c879ea75d65eb4ebe6955c9861bfb8, type: 2}
+      objectReference: {fileID: 2100000, guid: 10139ed7f36fd9d4fac10148af902f83, type: 2}
     - target: {fileID: 919132149155446097, guid: 651c9ba69e171df428c36cf990d395d3,
         type: 3}
       propertyPath: m_Name

@@ -87,7 +87,7 @@ MonoBehaviour:
   - {fileID: 5087753512510415589}
   - {fileID: 1654568038850630453}
   - {fileID: 7550738708606857711}
-  _floatingStrenge: 4
+  _floatingStrenge: 250
   _depth: 1.25
 --- !u!1 &1370502034550469229
 GameObject:
@@ -202,8 +202,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aedb7f62b461d3b45959492c71404ecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _forwardForce: 25
-  _rotateForce: 150
+  _forwardForce: 3500
+  _rotateForce: 15000
   _maxAngular: 1
 --- !u!54 &6789417679537646397
 Rigidbody:
@@ -469,7 +469,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4416843408080393458}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.25, z: 3.29}
+  m_LocalPosition: {x: 0, y: -0.25, z: 2.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -704,7 +704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _trackingObjectTransform: {fileID: 0}
-  _offsetFromTrackObject: {x: 45, y: 90, z: 45}
+  _offsetFromTrackObject: {x: 35, y: 70, z: 35}
   _trackingSpeed: 55
   _useParentTransform: 1
 --- !u!20 &3224279733526716142
