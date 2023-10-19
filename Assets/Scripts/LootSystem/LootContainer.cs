@@ -4,14 +4,15 @@ using static UnityEngine.Rendering.DebugUI;
 public class LootContainer : MonoBehaviour
 {
     [Header("Настройки подбора контейнера:")]
-    [SerializeField] private Transform _mainShipTransform;
+    private Transform _mainShipTransform;
     [SerializeField] private float _findDistance;
-    [SerializeField] private bool _showBoundBox = false;
+    [SerializeField] private float _pickUpSpeed = 1f;
     [SerializeField] private float _killDistance = 1f;
+    [SerializeField] private bool _showBoundBox = false;
+
     private float _distanceBetween;
     private GameObject _mainShip;
-    public float _pickUpSpeed = 1f;
-
+    private bool _go = false;
 
     [Header("Ценность контейнера:")]
     [SerializeField] private uint _goldValue;
@@ -31,6 +32,8 @@ public class LootContainer : MonoBehaviour
     {
         _distanceBetween = Vector3.Distance(_mainShipTransform.position, gameObject.transform.position);
         if (_distanceBetween < _findDistance)
+            _go = true;
+        if (_go)
             PickUp();
     }
 

@@ -3,23 +3,29 @@ using UnityEngine;
 public class Buoy : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rigidBody;
-    [SerializeField] OceanShaderParameters _oceanParameters;
+    [SerializeField] private bool _isSide;
 
-    [Header("Damping factors:")]
-    [SerializeField] private float _buoyDrag = 1f;
-    [SerializeField] private float _buoyAngularDrag = 12f;
+    [HideInInspector] public float _strengeFloating = 250;
+    [HideInInspector] public float _depthBeforeSubmerged = 1.5f;
 
-    [Header("Buoy settings:")]
-    [SerializeField] private float _countBuoy = 1f;
-    [SerializeField] private float _depthBeforeSubmerged = 1f;
-    [SerializeField] private float _strengeFloating = 3;
+    private OceanShaderParameters _oceanParameters;
+
+    // Отладочные параметры:
+    private float _countBuoy = 1f;
 
     private float _waveHeight;
+
+    void Awake()
+    {
+        _oceanParameters = FindObjectOfType<OceanShaderParameters>();
+        if (_isSide)
+            _strengeFloating *= 1.5f;
+    }
 
     void Update()
     {
         // Init gravity to buoy
-        _rigidBody.AddForceAtPosition(Physics.gravity / _countBuoy, transform.position, ForceMode.Acceleration);
+        _rigidBody.AddForceAtPosition((Physics.gravity / _countBuoy) * Time.deltaTime, transform.position, ForceMode.Acceleration);
 
         _waveHeight = getHeightAtPosition(transform.position);
         if (transform.position.y < _waveHeight)
@@ -31,11 +37,11 @@ public class Buoy : MonoBehaviour
     /// </summary>
     void Floating()
     {
-        float displacementMultiplier = Mathf.Clamp01((_waveHeight - transform.position.y) / _depthBeforeSubmerged) * _strengeFloating;
+        float displacementMultiplier = Mathf.Clamp01((_waveHeight - transform.position.y) / _depthBeforeSubmerged) * _strengeFloating * Time.deltaTime;
         _rigidBody.AddForceAtPosition(new Vector3(0f, Mathf.Abs(Physics.gravity.y) * displacementMultiplier, 0f), transform.position, ForceMode.Acceleration);
 
-        _rigidBody.AddForce(displacementMultiplier * -_rigidBody.velocity * _buoyDrag * Time.deltaTime, ForceMode.VelocityChange);
-        _rigidBody.AddTorque(displacementMultiplier * -_rigidBody.angularVelocity * _buoyAngularDrag * Time.deltaTime, ForceMode.VelocityChange);
+        //_rigidBody.AddForce(/*displacementMultiplier * */-_rigidBody.velocity * Time.deltaTime, ForceMode.VelocityChange);
+        //_rigidBody.AddTorque(/*displacementMultiplier * */-_rigidBody.angularVelocity * Time.deltaTime, ForceMode.VelocityChange);
     }
 
     public float getHeightAtPosition(Vector3 position)
@@ -50,9 +56,10 @@ public class Buoy : MonoBehaviour
     public Vector3 GetAdditionWaveHeight(Vector3 position, float timeSinceStart)
     {
         Vector3 result = new Vector3();
-        result = GerstnerWaveGenerator(position, _oceanParameters.DirectionBasedWave, _oceanParameters.StepnessBasedWave, _oceanParameters.LenghtBasedWave, _oceanParameters.SpeedBasedWave, timeSinceStart) +
-            GerstnerWaveGenerator(position, _oceanParameters.DirectionMiddleWave, _oceanParameters.StepnessMiddleWave, _oceanParameters.LenghtMiddleWave, _oceanParameters.SpeedMiddleWave, timeSinceStart) +
-            GerstnerWaveGenerator(position, _oceanParameters.DirectionMicroWave, _oceanParameters.StepnessMicroWave, _oceanParameters.LenghtMicroWave, _oceanParameters.SpeedMicroWave, timeSinceStart);
+        result = GerstnerWaveGenerator(position, _oceanParameters.DirectionWave[0], _oceanParameters.StepnessWave[0], _oceanParameters.LenghtWave[0], _oceanParameters.SpeedWave[0], timeSinceStart) +
+            GerstnerWaveGenerator(position, _oceanParameters.DirectionWave[1], _oceanParameters.StepnessWave[1], _oceanParameters.LenghtWave[1], _oceanParameters.SpeedWave[1], timeSinceStart) +
+            GerstnerWaveGenerator(position, _oceanParameters.DirectionWave[2], _oceanParameters.StepnessWave[2], _oceanParameters.LenghtWave[2], _oceanParameters.SpeedWave[2], timeSinceStart) +
+            GerstnerWaveGenerator(position, _oceanParameters.DirectionWave[3], _oceanParameters.StepnessWave[3], _oceanParameters.LenghtWave[3], _oceanParameters.SpeedWave[3], timeSinceStart);
         return result;
     }
 
@@ -60,24 +67,16 @@ public class Buoy : MonoBehaviour
     /// Generator Gerstner waves
     /// </summary>
     /// <returns>Position Vertex in current place</returns>
-    public Vector3 GerstnerWaveGenerator(Vector3 position, Vector2 direction, float steepness, float wavelength, float speed, float timeSinceStart)
+    public Vector3 GerstnerWaveGenerator(Vector3 position, float angle, float steepness, float wavelength, float speed, float timeSinceStart)
     {
         float k = 2 * Mathf.PI / wavelength;
 
-        Vector2 normilizedDirection = direction.normalized;
+        Vector3 basedDirection = new Vector3(1, 1, 0);
+        Vector3 normilizedDirection = basedDirection.RotateAroundAxis(Vector3.forward, angle);
 
         float f = k * Vector2.Dot(normilizedDirection, new Vector2(position.x, position.z)) - (speed * timeSinceStart);
         float a = steepness / k;
 
         return new Vector3(normilizedDirection.x * a * Mathf.Cos(f), a * Mathf.Sin(f), normilizedDirection.y * a * Mathf.Cos(f));
-    }
-
-    /// <summary>
-    /// Generator Harmonic waves
-    /// </summary>
-    /// <returns>Waves height in current position</returns>
-    public float GetHeightHarmonicWaves()
-    {
-        return 0f;
     }
 }
