@@ -1,69 +1,34 @@
 using System.Collections;
+using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
+using UnityEngine.Rendering;
 
-public class DefaultCore : MonoBehaviour
+[ExecuteInEditMode]
+public class VolumeWater : MonoBehaviour
 {
-    [SerializeField] public float _shotImpulse = 1;
-    [Tooltip("Список эффектов: Нулевой - остальное; Первый - вода; Второй - враги")]
-    [SerializeField] private GameObject[] _hitsFX;
-    private GameObject Parent;
-    private Rigidbody _rigidBody;
 
     private OceanShaderParameters _oceanParameters;
+    [SerializeField] private Volume _volume;
 
-    void Awake()
+    // Start is called before the first frame update
+    void Start()
     {
         _oceanParameters = FindObjectOfType<OceanShaderParameters>();
-        Parent = GameObject.Find("Projectiles");
-        _rigidBody = GetComponent<Rigidbody>();
+        if (SceneView.currentDrawingSceneView.camera.transform.position.y <= getHeightAtPosition(SceneView.currentDrawingSceneView.camera.transform.position))
+            _volume.enabled = true;
+        else
+            _volume.enabled = false;
     }
 
-    private void Start()
-    {
-        _rigidBody.AddForce(gameObject.transform.right * _shotImpulse, ForceMode.Impulse);
-        StartCoroutine(Killer());
-    }
-
-    private void Update()
-    {
-        OnWaterKiller();
-    }
-
-    // Не произошло столкновения
-    IEnumerator Killer()
-    {
-        gameObject.transform.SetParent(Parent.transform, true);
-        yield return new WaitForSeconds(4f);
-        Destroy(gameObject);
-    }
-
-    // Не произошло столкновения
-    void OnWaterKiller()
-    {
-       if (transform.position.y <= getHeightAtPosition(transform.position))
-        {
-            Instantiate(_hitsFX[1], transform.position, Quaternion.identity);
-            Destroy(gameObject);
-        }
-    }
-
-    // Произошло столкновение
-    private void OnCollisionEnter(Collision collision)
-    {
-        switch (collision.gameObject.tag)
-        {
-            case ("Water"):
-                Instantiate(_hitsFX[1], transform.position, Quaternion.identity);
-                break;
-            case ("Enemy"):
-                Instantiate(_hitsFX[2], transform.position, Quaternion.identity);
-                break;
-            default:
-                Instantiate(_hitsFX[0], transform.position, Quaternion.identity);
-                break;
-        }
-        Destroy(gameObject);
-    }
+    //private void Update()
+    //{
+    //    if (SceneView.currentDrawingSceneView.camera.transform.position.y <= getHeightAtPosition(SceneView.currentDrawingSceneView.camera.transform.position))
+    //        _volume.enabled = true;
+    //    else
+    //        _volume.enabled = false;
+    //}
 
     public float getHeightAtPosition(Vector3 position)
     {

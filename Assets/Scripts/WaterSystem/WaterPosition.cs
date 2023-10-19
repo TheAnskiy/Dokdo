@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class WaterPosition : MonoBehaviour
 {
-    [SerializeField] private GameObject MainShip;
+    [SerializeField] private GameObject _mainShip;
+    [SerializeField] private Vector2 _offset;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +16,6 @@ public class WaterPosition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.position = new Vector3(MainShip.transform.position.x, transform.position.y, MainShip.transform.position.z);
+        gameObject.transform.position = new Vector3(_mainShip.transform.position.x + _offset.x, transform.position.y, _mainShip.transform.position.z + _offset.y);
     }
 }
