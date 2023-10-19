@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &564192383338806111
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3075630003078279515}
-  m_Layer: 0
-  m_Name: Socket_Cannon_3
-  m_TagString: Untagged
-  m_Icon: {fileID: 2800000, guid: dde1c1896a3f9354b9cb5584c2c6aaa3, type: 3}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3075630003078279515
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 564192383338806111}
-  m_LocalRotation: {x: 0.13034727, y: 0.99008614, z: -0.006831203, w: -0.051888157}
-  m_LocalPosition: {x: -1.49, y: 1, z: 1.229}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3434504933124018057}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 186, z: 15}
 --- !u!1 &571765018875466196
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,7 +58,7 @@ MonoBehaviour:
   - {fileID: 7550738708606857711}
   _floatingStrenge: 250
   _depth: 1.25
---- !u!1 &1370502034550469229
+--- !u!1 &1348289738729941774
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,60 +66,29 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2364297708938502379}
+  - component: {fileID: 6129791977134373397}
   m_Layer: 0
-  m_Name: Socket_Cannon_5
+  m_Name: Socket_Cannon_4
   m_TagString: Untagged
   m_Icon: {fileID: 2800000, guid: dde1c1896a3f9354b9cb5584c2c6aaa3, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2364297708938502379
+--- !u!4 &6129791977134373397
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1370502034550469229}
-  m_LocalRotation: {x: 0, y: 0, z: 0.13052616, w: 0.9914449}
-  m_LocalPosition: {x: 1.6, y: 1, z: 0.475}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_GameObject: {fileID: 1348289738729941774}
+  m_LocalRotation: {x: -0, y: 0.7372774, z: -0, w: 0.67559016}
+  m_LocalPosition: {x: 1.6399999, y: 1, z: -1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3434504933124018057}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 15}
---- !u!1 &1761220963867592705
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1269173322475143288}
-  m_Layer: 0
-  m_Name: Socket_Cannon_2
-  m_TagString: Untagged
-  m_Icon: {fileID: 2800000, guid: dde1c1896a3f9354b9cb5584c2c6aaa3, type: 3}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1269173322475143288
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1761220963867592705}
-  m_LocalRotation: {x: 0.13052616, y: 0.9914449, z: 0, w: 0}
-  m_LocalPosition: {x: -1.553, y: 1, z: 0.475}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3434504933124018057}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 15}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: -95, z: 0}
 --- !u!1 &2207979108217277057
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,8 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aedb7f62b461d3b45959492c71404ecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _forwardForce: 3500
-  _rotateForce: 15000
+  _forwardForce: 30000
+  _rotateForce: 60000
   _maxAngular: 1
 --- !u!54 &6789417679537646397
 Rigidbody:
@@ -213,9 +151,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2207979108217277057}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 1
-  m_AngularDrag: 6
+  m_AngularDrag: 2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -365,6 +303,99 @@ MonoBehaviour:
   _isSide: 1
   _strengeFloating: 15
   _depthBeforeSubmerged: 1.5
+--- !u!1 &2487324691841796837
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2642507983720773392}
+  m_Layer: 0
+  m_Name: Socket_Cannon_5
+  m_TagString: Untagged
+  m_Icon: {fileID: 2800000, guid: dde1c1896a3f9354b9cb5584c2c6aaa3, type: 3}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2642507983720773392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2487324691841796837}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 1.67, y: 1, z: 0.27}
+  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3434504933124018057}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!1 &3551687303894190823
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4724554574502393231}
+  m_Layer: 0
+  m_Name: Socket_Cannon_6
+  m_TagString: Untagged
+  m_Icon: {fileID: 2800000, guid: dde1c1896a3f9354b9cb5584c2c6aaa3, type: 3}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4724554574502393231
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3551687303894190823}
+  m_LocalRotation: {x: -0, y: 0.67559016, z: -0, w: 0.7372774}
+  m_LocalPosition: {x: 1.55, y: 1, z: 1.51}
+  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3434504933124018057}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: -85, z: 0}
+--- !u!1 &3664247808479257017
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9109534167524903034}
+  m_Layer: 0
+  m_Name: Socket_Cannon_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 2800000, guid: dde1c1896a3f9354b9cb5584c2c6aaa3, type: 3}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9109534167524903034
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3664247808479257017}
+  m_LocalRotation: {x: -0, y: -0.67559016, z: -0, w: 0.7372774}
+  m_LocalPosition: {x: -1.55, y: 1, z: 1.51}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3434504933124018057}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: -85, z: 0}
 --- !u!1 &4058864999356801364
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,14 +467,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4073652258319872924}
-  m_LocalRotation: {x: 0.13048142, y: 0.99110514, z: 0.003416785, w: 0.025953067}
-  m_LocalPosition: {x: -1.545, y: 1, z: -0.279}
+  m_LocalRotation: {x: -0, y: -0.7372774, z: -0, w: 0.67559016}
+  m_LocalPosition: {x: -1.6399999, y: 1, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3434504933124018057}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 177, z: 15}
+  m_LocalEulerAnglesHint: {x: 0, y: -95, z: 0}
 --- !u!1 &4416843408080393458
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,11 +553,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 753537809730889085}
-  - {fileID: 1269173322475143288}
-  - {fileID: 3075630003078279515}
-  - {fileID: 485942430437533544}
-  - {fileID: 2364297708938502379}
-  - {fileID: 5401193935278612233}
+  - {fileID: 5068992592880835704}
+  - {fileID: 9109534167524903034}
+  - {fileID: 6129791977134373397}
+  - {fileID: 2642507983720773392}
+  - {fileID: 4724554574502393231}
   m_Father: {fileID: 4536273642129481760}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -594,7 +625,7 @@ MonoBehaviour:
   _isSide: 0
   _strengeFloating: 15
   _depthBeforeSubmerged: 1.5
---- !u!1 &6891331492378105836
+--- !u!1 &5609114807135683148
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -602,60 +633,29 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 485942430437533544}
+  - component: {fileID: 5068992592880835704}
   m_Layer: 0
-  m_Name: Socket_Cannon_4
+  m_Name: Socket_Cannon_2
   m_TagString: Untagged
   m_Icon: {fileID: 2800000, guid: dde1c1896a3f9354b9cb5584c2c6aaa3, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &485942430437533544
+--- !u!4 &5068992592880835704
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6891331492378105836}
-  m_LocalRotation: {x: 0.0034167732, y: 0.025952978, z: 0.13048144, w: 0.99110514}
-  m_LocalPosition: {x: 1.6, y: 1, z: -0.279}
+  m_GameObject: {fileID: 5609114807135683148}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -1.67, y: 1, z: 0.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3434504933124018057}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 3, z: 15}
---- !u!1 &7435474443671379405
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5401193935278612233}
-  m_Layer: 0
-  m_Name: Socket_Cannon_6
-  m_TagString: Untagged
-  m_Icon: {fileID: 2800000, guid: dde1c1896a3f9354b9cb5584c2c6aaa3, type: 3}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5401193935278612233
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7435474443671379405}
-  m_LocalRotation: {x: -0.006831203, y: -0.051888157, z: 0.13034727, w: 0.99008614}
-  m_LocalPosition: {x: 1.549, y: 1, z: 1.228}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3434504933124018057}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: -6, z: 15}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &7569157022731482115
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,7 +704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _trackingObjectTransform: {fileID: 0}
-  _offsetFromTrackObject: {x: 35, y: 70, z: 35}
+  _offsetFromTrackObject: {x: 45, y: 45, z: 45}
   _trackingSpeed: 55
   _useParentTransform: 1
 --- !u!20 &3224279733526716142
@@ -732,7 +732,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 2500
-  field of view: 40
+  field of view: 50
   orthographic: 0
   orthographic size: 5
   m_Depth: 0

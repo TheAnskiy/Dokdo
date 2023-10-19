@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class DefaultCore : MonoBehaviour
 {
-    [SerializeField] private float _speed = 1.0f;
+    [SerializeField] private float _power = 1.0f;
     [SerializeField] private float _lifeTime = 1.0f;
 
     [Tooltip("Список эффектов: Нулевой - остальное; Первый - вода; Второй - враги")]
@@ -16,14 +16,14 @@ public class DefaultCore : MonoBehaviour
     void Awake()
     {
         _oceanParameters = FindObjectOfType<OceanShaderParameters>();
-        Parent = GameObject.Find("Projectiles");
+        GameObject Parent = GameObject.Find("Projectiles");
 
         _rigidBody = GetComponent<Rigidbody>();
     }
 
     private void Start()
     {
-        _rigidBody.AddForce(gameObject.transform.forward * _speed, ForceMode.VelocityChange);
+        _rigidBody.AddForce(gameObject.transform.forward * _power, ForceMode.VelocityChange);
         Destroy(gameObject, _lifeTime);
     }
 
@@ -38,7 +38,7 @@ public class DefaultCore : MonoBehaviour
        if (transform.position.y <= getHeightAtPosition(transform.position))
         {
             Instantiate(_hitsFX[1], transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            Destroy(gameObject, 0.2f);
         }
     }
 
@@ -62,7 +62,7 @@ public class DefaultCore : MonoBehaviour
 
     public void SetSpeed(float newSpeed)
     {
-        _speed = newSpeed;
+        _power = newSpeed;
     }
 
     public float getHeightAtPosition(Vector3 position)
