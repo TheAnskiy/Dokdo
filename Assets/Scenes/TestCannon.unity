@@ -231,7 +231,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2053267822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 6.88}
+  m_LocalPosition: {x: 0, y: 56.03, z: 9.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -466,12 +466,12 @@ PrefabInstance:
     - target: {fileID: 2841720731378166256, guid: f92337f95b6966043a05a1cb9d1c8c38,
         type: 3}
       propertyPath: _firingRange
-      value: 1000
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 2841720731378166256, guid: f92337f95b6966043a05a1cb9d1c8c38,
         type: 3}
       propertyPath: _horizontalAngle
-      value: 30
+      value: 25.79
       objectReference: {fileID: 0}
     - target: {fileID: 2841720731378166256, guid: f92337f95b6966043a05a1cb9d1c8c38,
         type: 3}
@@ -487,7 +487,12 @@ PrefabInstance:
     - target: {fileID: 2841720731378166256, guid: f92337f95b6966043a05a1cb9d1c8c38,
         type: 3}
       propertyPath: _verticalMaxAngle
-      value: 60
+      value: 11.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841720731378166256, guid: f92337f95b6966043a05a1cb9d1c8c38,
+        type: 3}
+      propertyPath: _verticalMinAngle
+      value: -16.8
       objectReference: {fileID: 0}
     - target: {fileID: 2841720731378166257, guid: f92337f95b6966043a05a1cb9d1c8c38,
         type: 3}
@@ -507,7 +512,7 @@ PrefabInstance:
     - target: {fileID: 2841720731378166271, guid: f92337f95b6966043a05a1cb9d1c8c38,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 56.8
       objectReference: {fileID: 0}
     - target: {fileID: 2841720731378166271, guid: f92337f95b6966043a05a1cb9d1c8c38,
         type: 3}

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Cannon : MonoBehaviour
 {
+
     [SerializeField] private Transform _target;
     [SerializeField] private Transform _horizontal;
     [SerializeField] private Transform _vertical;
@@ -149,4 +150,40 @@ public class Cannon : MonoBehaviour
         float x2 = (-b - Mathf.Sqrt(D)) / (2 * a);
         return (x1, x2);
     }
+
+#if UNITY_EDITOR
+
+    /// <summary>
+    /// Ќе использовать дл€ игровой логики (только дл€ Debug'а)
+    /// </summary>
+    public struct DataForDrawFireRange
+    {
+        public float dist;
+        public float horAngle;
+        public float minVertAngl;
+        public float maxVertAngle;
+    }
+
+    /// <summary>
+    /// Ќе использовать дл€ игровой логики (только дл€ Debug'а)
+    /// </summary>
+    /// <returns></returns>
+    public DataForDrawFireRange GetDataForDrawFireRange()
+    {
+        return new DataForDrawFireRange()
+        {
+            dist = _firingRange,
+            horAngle = _horizontalAngle,
+            minVertAngl = _verticalMinAngle,
+            maxVertAngle = _verticalMaxAngle
+        };
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + transform.Find("Horizontal").Find("Vertical").forward * 200);
+    }
+
+#endif
 }
