@@ -1,5 +1,11 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class Cannon : MonoBehaviour
 {
@@ -101,7 +107,8 @@ public class Cannon : MonoBehaviour
 
     private void LookAtTarget()
     {
-        Vector3 position = DeterminingAimingPoint();
+        if (TryDeterminingAimingPoint(out Vector3 position) == false)
+            return;
 
         Vector3 horizontalToTarget = position - _horizontal.position;
         Vector3 dirToTargetXZ = Vector3.ProjectOnPlane(horizontalToTarget, transform.up);
@@ -116,8 +123,9 @@ public class Cannon : MonoBehaviour
         _vertical.localRotation = Quaternion.RotateTowards(_vertical.localRotation, Quaternion.Euler(new Vector3(clampedAngleX, 0, 0)), _verticaRotateSpeed);
     }
 
-    private Vector3 DeterminingAimingPoint()
+    private bool TryDeterminingAimingPoint(out Vector3 aimPoint)
     {
+        
         Vector3 dir = _target.position - transform.position;
         float x = new Vector3(dir.x, dir.z).magnitude; // Дистанция до цели
         float y = dir.y; // Возвышение цели
@@ -128,6 +136,11 @@ public class Cannon : MonoBehaviour
         float c = a - y;
 
         (float x1, float x2) = SolveQuadratic(a, b, c);
+        if (float.IsNaN(x1))
+        {
+            aimPoint = Vector3.zero;
+            return false;
+        }
 
         float angleAttak = Mathf.Rad2Deg * Mathf.Atan(x1);
 
@@ -135,8 +148,8 @@ public class Cannon : MonoBehaviour
 
         float loweringProjectile = (Physics.gravity.y * projectileFlightTime * projectileFlightTime) / 2;
 
-        Vector3 position = _target.position + new Vector3(0, -loweringProjectile, 0);
-        return position;
+        aimPoint = _target.position + new Vector3(0, -loweringProjectile, 0);
+        return true;
     }
 
     private (float, float) SolveQuadratic(float a, float b, float c)
@@ -153,36 +166,47 @@ public class Cannon : MonoBehaviour
 
 #if UNITY_EDITOR
 
-    /// <summary>
-    /// Не использовать для игровой логики (только для Debug'а)
-    /// </summary>
-    public struct DataForDrawFireRange
+    private void OnDrawGizmos()
     {
-        public float dist;
-        public float horAngle;
-        public float minVertAngl;
-        public float maxVertAngle;
+        DrawFiringSector();
     }
 
-    /// <summary>
-    /// Не использовать для игровой логики (только для Debug'а)
-    /// </summary>
-    /// <returns></returns>
-    public DataForDrawFireRange GetDataForDrawFireRange()
+    private void DrawFiringSector()
     {
-        return new DataForDrawFireRange()
-        {
-            dist = _firingRange,
-            horAngle = _horizontalAngle,
-            minVertAngl = _verticalMinAngle,
-            maxVertAngle = _verticalMaxAngle
-        };
-    }
+        float thickness = 1.0f;
 
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, transform.position + transform.Find("Horizontal").Find("Vertical").forward * 200);
+        Vector3 upLeftDir = transform.forward.RotateAroundAxis(transform.up, -_horizontalAngle).
+            RotateAroundAxis(transform.right.RotateAroundAxis(transform.up, -_horizontalAngle), -_verticalMaxAngle);
+
+        Vector3 downLeftDir = transform.forward.RotateAroundAxis(transform.up, -_horizontalAngle).
+            RotateAroundAxis(transform.right.RotateAroundAxis(transform.up, -_horizontalAngle), -_verticalMinAngle);
+
+        Vector3 upRightDir = transform.forward.RotateAroundAxis(transform.up, _horizontalAngle).
+            RotateAroundAxis(transform.right.RotateAroundAxis(transform.up, _horizontalAngle), -_verticalMaxAngle);
+
+        Vector3 downRightDir = transform.forward.RotateAroundAxis(transform.up, _horizontalAngle).
+            RotateAroundAxis(transform.right.RotateAroundAxis(transform.up, _horizontalAngle), -_verticalMinAngle);
+
+        Handles.color = Color.yellow;
+        Handles.DrawLine(transform.position, transform.position + upLeftDir * _firingRange, thickness);
+        Handles.DrawLine(transform.position, transform.position + upRightDir * _firingRange, thickness);
+        Handles.DrawLine(transform.position, transform.position + downLeftDir * _firingRange, thickness);
+        Handles.DrawLine(transform.position, transform.position + downRightDir * _firingRange, thickness);
+
+        Handles.DrawWireArc(transform.position, transform.up.RotateAroundAxis(transform.right, -_verticalMaxAngle),
+            upLeftDir, Vector3.Angle(upLeftDir, upRightDir), _firingRange, thickness);
+
+        Handles.DrawWireArc(transform.position, transform.up.RotateAroundAxis(transform.right, -_verticalMinAngle),
+            downLeftDir, Vector3.Angle(downLeftDir, downRightDir), _firingRange, thickness);
+
+        Handles.DrawWireArc(transform.position, transform.right.RotateAroundAxis(transform.up, -_horizontalAngle),
+            upLeftDir, Vector3.Angle(upLeftDir, downLeftDir), _firingRange, thickness);
+
+        Handles.DrawWireArc(transform.position, transform.right.RotateAroundAxis(transform.up, _horizontalAngle),
+            upRightDir, Vector3.Angle(upRightDir, downRightDir), _firingRange, thickness);
+
+        Handles.color = Color.red;
+        Handles.DrawLine(_vertical.transform.position, _vertical.transform.position + _vertical.transform.forward * _firingRange, thickness);
     }
 
 #endif
