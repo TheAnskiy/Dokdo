@@ -333,10 +333,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1064.800048828125,
-            "y": -956.800048828125,
-            "width": 105.5999755859375,
-            "height": 33.60003662109375
+            "x": -1082.4000244140625,
+            "y": -956.7999877929688,
+            "width": 105.60009765625,
+            "height": 33.5999755859375
         }
     },
     "m_Slots": [
@@ -588,7 +588,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "3c94a3fff3bb40f99b40dce465a998c2",
     "m_Id": 0,
-    "m_DisplayName": "Smoothness",
+    "m_DisplayName": "Softness",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -773,9 +773,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -261.5999755859375,
-            "y": -1217.60009765625,
-            "width": 87.20004272460938,
+            "x": -309.6000061035156,
+            "y": -1205.60009765625,
+            "width": 87.19999694824219,
             "height": 76.800048828125
         }
     },
@@ -1244,10 +1244,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1100.0001220703125,
+            "x": -1098.4000244140625,
             "y": -990.4000244140625,
-            "width": 140.800048828125,
-            "height": 33.5999755859375
+            "width": 121.60009765625,
+            "height": 33.60003662109375
         }
     },
     "m_Slots": [
@@ -1370,10 +1370,10 @@
     "m_Guid": {
         "m_GuidSerialized": "895b194b-9d6d-4bb2-83c6-c55e417eb909"
     },
-    "m_Name": "Smoothness",
+    "m_Name": "Softness",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Smoothness",
-    "m_DefaultReferenceName": "_Smoothness",
+    "m_RefNameGeneratedByDisplayName": "Softness",
+    "m_DefaultReferenceName": "_Softness",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -1772,10 +1772,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -915.2000122070313,
+            "x": -932.7999267578125,
             "y": -1061.5999755859375,
-            "width": 155.99993896484376,
-            "height": 141.5999755859375
+            "width": 156.0,
+            "height": 141.59991455078126
         }
     },
     "m_Slots": [
