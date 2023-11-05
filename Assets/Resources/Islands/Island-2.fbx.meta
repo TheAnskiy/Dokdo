@@ -12,6 +12,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Stone_mat
+    second: {fileID: 2100000, guid: 396bc4e0cd5a16148af1004c86d8e7e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tree-leaf_mat
+    second: {fileID: 2100000, guid: b50f3f5e0b21f1d40a0a4d7ef23fa8d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Tree-wood_mat
     second: {fileID: 2100000, guid: 73b93cf4e53f7ef4d8188cd7dc536c9d, type: 2}
   materials:

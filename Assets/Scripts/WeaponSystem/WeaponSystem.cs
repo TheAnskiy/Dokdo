@@ -13,7 +13,7 @@ public class WeaponSystem : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        _cannon = GetComponentsInChildren<Transform>().Skip(1).ToArray();
+        //_cannon = GetComponentsInChildren<Transform>().Skip(1).ToArray();
     }
 
     // Update is called once per frame
