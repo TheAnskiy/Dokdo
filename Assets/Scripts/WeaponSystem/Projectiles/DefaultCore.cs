@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DefaultCore : MonoBehaviour
@@ -35,7 +34,10 @@ public class DefaultCore : MonoBehaviour
     // Столкновение с водой
     void OnWaterKiller()
     {
-       if (transform.position.y <= getHeightAtPosition(transform.position))
+        if (_oceanParameters == null)
+            return;
+
+        if (transform.position.y <= getHeightAtPosition(transform.position))
         {
             Instantiate(_hitsFX[1], transform.position, Quaternion.identity);
             Destroy(gameObject, 0.2f);
@@ -57,6 +59,12 @@ public class DefaultCore : MonoBehaviour
                 Instantiate(_hitsFX[0], transform.position, Quaternion.identity);
                 break;
         }
+
+        if (collision.transform.TryGetComponent(out IDamageable damageable))
+        {
+            damageable.TakeDamage(gameObject, 10);
+        }
+
         Destroy(gameObject);
     }
 

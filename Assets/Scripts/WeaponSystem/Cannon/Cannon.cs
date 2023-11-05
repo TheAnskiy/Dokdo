@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -33,7 +31,8 @@ public class Cannon : MonoBehaviour
     private bool isFiring => _coroutineAttack != null;
 
     private void Update()
-    {
+    { 
+
         Vector3 _toTarget = _target.position - transform.position;
         float distanceToTarget = _toTarget.magnitude;
 
@@ -74,9 +73,9 @@ public class Cannon : MonoBehaviour
         } while (true);
     }
 
-    public void UpdateTarget(Transform newTarget)
+    public void SetTarget(Transform newTarget)
     {
-        if (_target == null)
+        if (newTarget == null)
             return;
 
         if (_target == newTarget)
@@ -166,7 +165,7 @@ public class Cannon : MonoBehaviour
 
 #if UNITY_EDITOR
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         DrawFiringSector();
     }
