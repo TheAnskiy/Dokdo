@@ -71,6 +71,12 @@ public class DefaultCore : MonoBehaviour
                 Instantiate(_hitsFX[0], transform.position, Quaternion.identity);
                 break;
         }
+
+        if (collision.transform.TryGetComponent(out IDamageable damageable))
+        {
+            damageable.TakeDamage(gameObject, 10);
+        }
+
         Destroy(gameObject);
     }
 

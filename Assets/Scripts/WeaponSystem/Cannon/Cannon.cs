@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -33,7 +31,8 @@ public class Cannon : MonoBehaviour
     private bool isFiring => _coroutineAttack != null;
 
     private void Update()
-    {
+    { 
+
         Vector3 _toTarget = _target.position - transform.position;
         float distanceToTarget = _toTarget.magnitude;
 
@@ -74,9 +73,9 @@ public class Cannon : MonoBehaviour
         } while (true);
     }
 
-    public void UpdateTarget(Transform newTarget)
+    public void SetTarget(Transform newTarget)
     {
-        if (_target == null)
+        if (newTarget == null)
             return;
 
         if (_target == newTarget)
@@ -187,17 +186,27 @@ public class Cannon : MonoBehaviour
         Vector3 downRightDir = transform.forward.RotateAroundAxis(transform.up, _horizontalAngle).
             RotateAroundAxis(transform.right.RotateAroundAxis(transform.up, _horizontalAngle), -_verticalMinAngle);
 
+        Vector3 centerLeftDir = transform.forward.RotateAroundAxis(transform.up, -_horizontalAngle).
+            RotateAroundAxis(transform.right.RotateAroundAxis(transform.up, -_horizontalAngle), -(_verticalMinAngle + (_verticalMaxAngle - _verticalMinAngle)/2));
+
         Handles.color = Color.yellow;
         Handles.DrawLine(transform.position, transform.position + upLeftDir * _firingRange, thickness);
         Handles.DrawLine(transform.position, transform.position + upRightDir * _firingRange, thickness);
         Handles.DrawLine(transform.position, transform.position + downLeftDir * _firingRange, thickness);
         Handles.DrawLine(transform.position, transform.position + downRightDir * _firingRange, thickness);
 
-        Handles.DrawWireArc(transform.position, transform.up.RotateAroundAxis(transform.right, -_verticalMaxAngle),
-            upLeftDir, Vector3.Angle(upLeftDir, upRightDir), _firingRange, thickness);
+        Handles.DrawWireArc(transform.position, transform.right,
+            transform.forward.RotateAroundAxis(transform.right, -_verticalMaxAngle), 
+            (_verticalMaxAngle - _verticalMinAngle), _firingRange, thickness);
 
-        Handles.DrawWireArc(transform.position, transform.up.RotateAroundAxis(transform.right, -_verticalMinAngle),
-            downLeftDir, Vector3.Angle(downLeftDir, downRightDir), _firingRange, thickness);
+        Handles.DrawWireArc(transform.position, transform.up,
+            centerLeftDir, _horizontalAngle * 2, _firingRange, thickness);
+
+        Handles.DrawWireArc(transform.position, transform.up,
+            upLeftDir, _horizontalAngle * 2, _firingRange, thickness);
+
+        Handles.DrawWireArc(transform.position, transform.up,
+            downLeftDir, _horizontalAngle * 2, _firingRange, thickness);
 
         Handles.DrawWireArc(transform.position, transform.right.RotateAroundAxis(transform.up, -_horizontalAngle),
             upLeftDir, Vector3.Angle(upLeftDir, downLeftDir), _firingRange, thickness);
