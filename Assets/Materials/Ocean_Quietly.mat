@@ -152,7 +152,7 @@ Material:
     - _SmoothFoam: 0.6
     - _SmoothWater: 0.9
     - _SoftnessEmissRiges: 6
-    - _SoftnessMask: 50
+    - _SoftnessMask: 40
     - _SoftnessNonEmissRiges: 4
     - _SoftnessRidges: 20
     - _SoftnessRidgesColor: 14.92
@@ -161,7 +161,7 @@ Material:
     - _SoftnessTransition: 520
     - _SoftnessTransitionColors: 0.018
     - _SoftnessTransitionDepth: 0.018
-    - _SoftnessTransparent: 4.7
+    - _SoftnessTransparent: 2
     - _Speed: 0.02
     - _SpeedFoam: 0.55
     - _SpeedMacro: 0

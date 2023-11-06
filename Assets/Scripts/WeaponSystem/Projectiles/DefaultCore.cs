@@ -25,7 +25,7 @@ public class DefaultCore : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(transform.eulerAngles);
+        //Debug.Log(transform.eulerAngles);
         OnWaterKiller();
     }
 

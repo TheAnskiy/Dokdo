@@ -136,7 +136,7 @@ Material:
     - _HeightRidgesWaves: -0.1
     - _HeightShallow: -1.5
     - _HeightShallowWaves: -4
-    - _IOR: 0.017
+    - _IOR: 0.008
     - _Lenght_Wave_1: 150
     - _Lenght_Wave_2: 100
     - _Lenght_Wave_3: 60
@@ -156,7 +156,7 @@ Material:
     - _SmoothFoam: 0.6
     - _SmoothWater: 0.9
     - _SoftnessEmissRiges: 3
-    - _SoftnessMask: 45
+    - _SoftnessMask: 40
     - _SoftnessNonEmissRiges: 7
     - _SoftnessRidges: 12
     - _SoftnessRidgesColor: 14.92
@@ -165,7 +165,7 @@ Material:
     - _SoftnessTransition: 535
     - _SoftnessTransitionColors: 0.018
     - _SoftnessTransitionDepth: 0.018
-    - _SoftnessTransparent: 3.5
+    - _SoftnessTransparent: 1.5
     - _Speed: 0.02
     - _SpeedFoam: 0.35
     - _SpeedMacro: 0

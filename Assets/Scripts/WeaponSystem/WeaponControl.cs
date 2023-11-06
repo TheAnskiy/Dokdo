@@ -78,7 +78,7 @@ public class WeaponControl : MonoBehaviour
         if (gameObject.transform.localEulerAngles.x > 180)
             currentRotation.x = gameObject.transform.localEulerAngles.x - 360f;
 
-        Debug.Log(currentRotation.x);
+        //Debug.Log(currentRotation.x);
         //Debug.Log(currentRotation.y);
     }
 }
