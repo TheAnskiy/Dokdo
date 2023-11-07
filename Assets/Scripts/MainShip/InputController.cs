@@ -6,7 +6,7 @@ using UnityEngine;
 public class InputController : MonoBehaviour
 {
     [HideInInspector] public Vector3 inputMoveble;
-    public Vector2 inputMouse;
+    [HideInInspector] Vector2 inputMouse;
     [HideInInspector] public bool dash;
     
     // Start is called before the first frame update
