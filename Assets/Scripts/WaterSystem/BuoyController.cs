@@ -2,28 +2,34 @@ using UnityEngine;
 
 public class BuoyController : MonoBehaviour
 {
-    [SerializeField] private bool _override = true;
     [SerializeField] private Buoy[] buoy;
-    [SerializeField] private float _floatingStrenge;
-    [SerializeField] private float _depth;
+    public float _floatingStrenge;
+    private float _oldFloatingStrenge;
+    public float _depth;
 
     // Start is called before the first frame update
     void Start()
     {
         buoy = GetComponentsInChildren<Buoy>();
+        _oldFloatingStrenge = _floatingStrenge;
+        SetFloatingParameters(_floatingStrenge, _depth);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_override)
+        if (buoy == null)
         {
-            SetFloatingStrenge(_floatingStrenge, _depth);
-            _override = false;
+            buoy = GetComponentsInChildren<Buoy>();
+        }
+        if (_floatingStrenge != _oldFloatingStrenge)
+        {
+            SetFloatingParameters(_floatingStrenge, _depth);
+            //_floatingStrenge
         }
     }
 
-    void SetFloatingStrenge(float floatingStrenge, float depth)
+    public void SetFloatingParameters(float floatingStrenge, float depth)
     {
         foreach (var buoy in buoy)
         {

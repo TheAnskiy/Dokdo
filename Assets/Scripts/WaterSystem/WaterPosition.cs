@@ -16,6 +16,7 @@ public class WaterPosition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.position = new Vector3(_mainShip.transform.position.x + _offset.x, transform.position.y, _mainShip.transform.position.z + _offset.y);
+        if (_mainShip != null)
+            gameObject.transform.position = new Vector3(_mainShip.transform.position.x + _offset.x, transform.position.y, _mainShip.transform.position.z + _offset.y);
     }
 }

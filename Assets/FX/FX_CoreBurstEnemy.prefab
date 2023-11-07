@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9101978258204188546}
   - component: {fileID: 7410961303435175731}
   m_Layer: 0
-  m_Name: CoreBurstEnemy
+  m_Name: FX_CoreBurstEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

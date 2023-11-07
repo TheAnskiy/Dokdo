@@ -30,11 +30,14 @@ public class LootContainer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_mainShipTransform != null) 
+        { 
         _distanceBetween = Vector3.Distance(_mainShipTransform.position, gameObject.transform.position);
         if (_distanceBetween < _findDistance)
             _go = true;
         if (_go)
             PickUp();
+        }
     }
 
     void OnDrawGizmosSelected()

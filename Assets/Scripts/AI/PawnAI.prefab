@@ -667,6 +667,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2841720731378166256, guid: f92337f95b6966043a05a1cb9d1c8c38,
         type: 3}
+      propertyPath: _timeBetweenShots
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841720731378166256, guid: f92337f95b6966043a05a1cb9d1c8c38,
+        type: 3}
       propertyPath: _verticalMaxAngle
       value: 30
       objectReference: {fileID: 0}
@@ -779,6 +784,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _horizontalAngle
       value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841720731378166256, guid: f92337f95b6966043a05a1cb9d1c8c38,
+        type: 3}
+      propertyPath: _timeBetweenShots
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2841720731378166256, guid: f92337f95b6966043a05a1cb9d1c8c38,
         type: 3}
