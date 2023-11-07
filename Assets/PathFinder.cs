@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
-using static UnityEngine.GraphicsBuffer;
+
 
 public class PathFinder : MonoBehaviour
 {
@@ -26,7 +26,7 @@ public class PathFinder : MonoBehaviour
 
     private IEnumerator UpdatePath()
     {
-        while (true)
+        while (_target != null)
         {
             transform.SetPositionAndRotation(
                 new Vector3(transform.parent.position.x, HeightSeaBottom, transform.parent.position.z), 

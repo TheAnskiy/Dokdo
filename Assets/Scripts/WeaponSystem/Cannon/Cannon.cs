@@ -32,6 +32,8 @@ public class Cannon : MonoBehaviour
 
     private void Update()
     { 
+        if (_target == null) 
+            return;
 
         Vector3 _toTarget = _target.position - transform.position;
         float distanceToTarget = _toTarget.magnitude;
