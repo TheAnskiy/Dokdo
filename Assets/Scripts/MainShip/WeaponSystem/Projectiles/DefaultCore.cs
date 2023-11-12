@@ -5,7 +5,8 @@ public class DefaultCore : MonoBehaviour
 {
     [SerializeField] private float _power = 1.0f;
     [SerializeField] private float _lifeTime = 1.0f;
-    
+    [SerializeField] private float _damage = 10f;
+
     [Tooltip("Список эффектов: Нулевой - остальное; Первый - столкновение с водой; Второй - эффект под водой; Третий - враги")]
     [SerializeField] private GameObject[] _hitsFX;
 
@@ -74,7 +75,7 @@ public class DefaultCore : MonoBehaviour
 
         if (collision.transform.TryGetComponent(out IDamageable damageable))
         {
-            damageable.TakeDamage(gameObject, 10);
+            damageable.TakeDamage(gameObject, _damage);
         }
 
         Destroy(gameObject);

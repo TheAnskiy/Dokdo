@@ -170,7 +170,7 @@ Material:
     - _Speed_Wave_2: -0.4
     - _Speed_Wave_3: 0.32
     - _Speed_Wave_4: 0.34
-    - _Stepness_Wave_1: 0.14
+    - _Stepness_Wave_1: 0.25
     - _Stepness_Wave_2: 0.14
     - _Stepness_Wave_3: 0.12
     - _Stepness_Wave_4: 0.11
