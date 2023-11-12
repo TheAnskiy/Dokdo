@@ -194,7 +194,7 @@ public class TestAI : MonoBehaviour, IDamageable
         Handles.color = Color.red;
         Handles.DrawWireDisc(transform.position, Vector3.up, _startDistance, 5);
 
-        if (_patrolPoints != null)
+        if (_patrolPoints?.Length > 0)
         {
             Handles.color = Color.green;
             Handles.DrawLine(transform.position, _patrolPoints[0].position);
