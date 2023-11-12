@@ -7,7 +7,6 @@ using UnityEditor;
 
 public class Cannon : MonoBehaviour
 {
-
     [SerializeField] private Transform _target;
     [SerializeField] private Transform _horizontal;
     [SerializeField] private Transform _vertical;
@@ -94,14 +93,11 @@ public class Cannon : MonoBehaviour
 
     private float NormalizeAngle(float angle)
     {
-        if (angle < -180.0f)
-        {
-            angle += 360;
-        }
-        else if (angle > 180.0f)
-        {
-            angle -= 360.0f;
-        }
+        if (angle > 180.0f) 
+            return angle - 360.0f;
+
+        if (angle < -180.0f) 
+            return angle + 360.0f;
 
         return angle;
     }
@@ -167,9 +163,10 @@ public class Cannon : MonoBehaviour
 
 #if UNITY_EDITOR
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         DrawFiringSector();
+
     }
 
     private void DrawFiringSector()

@@ -26,8 +26,11 @@ public class PathFinder : MonoBehaviour
 
     private IEnumerator UpdatePath()
     {
-        while (_target != null)
+        while (true)
         {
+            while (_target == null)
+                yield return new WaitForSeconds(TimeUpdatePath);
+
             transform.SetPositionAndRotation(
                 new Vector3(transform.parent.position.x, HeightSeaBottom, transform.parent.position.z), 
                 Quaternion.identity);
