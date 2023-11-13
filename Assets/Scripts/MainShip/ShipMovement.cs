@@ -18,7 +18,7 @@ public class ShipMovement : MonoBehaviour
     private float _maxAngular = 1f;
     private bool _inWater = false;
     // Offset Y position centre of mass
-    private float _offset = 2;
+    [SerializeField] private float _offset = 2;
 
     private void Awake()
     {

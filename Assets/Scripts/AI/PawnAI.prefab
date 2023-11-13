@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidBody: {fileID: 918121785}
-  _isSide: 1
+  _isReturn: 0
   _strengeFloating: 15
   _depthBeforeSubmerged: 1.5
 --- !u!1 &417221331
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidBody: {fileID: 918121785}
-  _isSide: 1
+  _isReturn: 0
   _strengeFloating: 15
   _depthBeforeSubmerged: 1.5
 --- !u!1 &1236972833
@@ -214,7 +214,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 451bf61f93b72514ba7f480c037521fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _override: 1
   buoy:
   - {fileID: 1593739390}
   - {fileID: 1385163983}
@@ -267,7 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidBody: {fileID: 918121785}
-  _isSide: 0
+  _isReturn: 0
   _strengeFloating: 15
   _depthBeforeSubmerged: 1.5
 --- !u!1 &1438141815
@@ -315,7 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidBody: {fileID: 918121785}
-  _isSide: 0
+  _isReturn: 0
   _strengeFloating: 15
   _depthBeforeSubmerged: 1.5
 --- !u!1 &1593739388
@@ -363,7 +362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidBody: {fileID: 918121785}
-  _isSide: 0
+  _isReturn: 0
   _strengeFloating: 15
   _depthBeforeSubmerged: 1.5
 --- !u!1 &1778564321
@@ -411,7 +410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidBody: {fileID: 918121785}
-  _isSide: 0
+  _isReturn: 0
   _strengeFloating: 15
   _depthBeforeSubmerged: 1.5
 --- !u!1 &3077002625749276789
@@ -509,7 +508,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: d1d59713d6147564f9b6e9315d5c88e7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
