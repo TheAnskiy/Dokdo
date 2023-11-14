@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buoyController: {fileID: 1195270808631924545}
-  <Health>k__BackingField: 100
+  <Health>k__BackingField: 10000
 --- !u!114 &1925096971934295463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,9 +256,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _forwardForce: 50000
   _maxDashForce: 100000
-  _accelerationStep: 20000
+  _accelerationStep: 40000
   _rotateForce: 50000
-  _offset: 2
+  _offset: 4
 --- !u!114 &7820867083075404143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,7 +284,7 @@ MonoBehaviour:
   _projectile: {fileID: 4269490702052635344, guid: d591441f2aa4e2e4c8481e62c7dada6b,
     type: 3}
   _fx: {fileID: 8177694572514537720, guid: 5a17719b60da1e74dbda20f567e87d09, type: 3}
-  _reloadingShooting: 0
+  _reloadingShooting: 0.2
 --- !u!54 &6789417679537646397
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -326,7 +326,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2245115800209343808}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.15, z: -2.99}
+  m_LocalPosition: {x: 0, y: 0.1, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -588,7 +588,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4058864999356801364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: -0.25, z: 0}
+  m_LocalPosition: {x: 2, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -636,7 +636,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4416843408080393458}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.25, z: 2.79}
+  m_LocalPosition: {x: 0, y: 0.1, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -684,7 +684,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5204667110814544189}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5, y: -0.25, z: 0}
+  m_LocalPosition: {x: -2, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -800,8 +800,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _trackingObjectTransform: {fileID: 0}
-  _offsetFromTrackObject: {x: 55, y: 90, z: 55}
-  _trackingSpeed: 55
+  _offsetFromTrackObject: {x: 35, y: 100, z: 35}
+  _trackingSpeed: 250
   _useParentTransform: 1
 --- !u!20 &3224279733526716142
 Camera:

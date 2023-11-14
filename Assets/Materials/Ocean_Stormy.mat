@@ -47,7 +47,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _TextureFoamDots:
         m_Texture: {fileID: 2800000, guid: 40d02195c9071e74b8c1aff04d9a4789, type: 3}
-        m_Scale: {x: 0.05, y: 0.05}
+        m_Scale: {x: 0.025, y: 0.025}
         m_Offset: {x: 0, y: 0}
     - _TextureFoamLines:
         m_Texture: {fileID: 2800000, guid: 02f9a28b5a54edb41b293f5c5380a3a8, type: 3}
@@ -55,7 +55,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _TextureFoamRiges:
         m_Texture: {fileID: 2800000, guid: 02f9a28b5a54edb41b293f5c5380a3a8, type: 3}
-        m_Scale: {x: 0.2, y: 0.2}
+        m_Scale: {x: 0.1, y: 0.1}
         m_Offset: {x: 0, y: 0}
     - _TextureMacro:
         m_Texture: {fileID: 2800000, guid: 1d3ca884241ea1f49a0524b2d21be65a, type: 3}
@@ -78,8 +78,8 @@ Material:
         m_Scale: {x: 0.01, y: 0.01}
         m_Offset: {x: 0, y: 0}
     - _TextureWater:
-        m_Texture: {fileID: 2800000, guid: bfc7150bc09277545bc7c58d68807563, type: 3}
-        m_Scale: {x: 0.2, y: 0.2}
+        m_Texture: {fileID: 2800000, guid: 961096d3ea6ff144980f3eaf56d83c27, type: 3}
+        m_Scale: {x: 0.1, y: 0.1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
@@ -105,19 +105,21 @@ Material:
     - _BrightNonEmiss: 0.5
     - _BrightNonEmissRiges: 0.15
     - _ContrastDepthMask: 0
-    - _ContrastFoam: 1.335
+    - _ContrastFoam: 1.25
     - _ContrastMacro: 1
+    - _Contrast_Texture: 0.13
     - _CutDistanceFoam: 25
     - _DepthMaskPower: 5
     - _DepthPower: 6.56
     - _DepthShallow: -500
+    - _DepthTransp: 0
     - _DepthTransparent: -8.72
     - _Depth_Shallow: -500
     - _Depth_Transparent: -9
     - _Direction_Wave_1: 125
-    - _Direction_Wave_2: 170
-    - _Direction_Wave_3: 185
-    - _Direction_Wave_4: 160
+    - _Direction_Wave_2: 75
+    - _Direction_Wave_3: 125
+    - _Direction_Wave_4: 186
     - _DistanceFoam: 100
     - _DistortionPower: 0.13
     - _ExponentTransparent: 0
@@ -132,11 +134,11 @@ Material:
     - _HeightRidgesWaves: -0.1
     - _HeightShallow: -1.5
     - _HeightShallowWaves: -4
-    - _IOR: 0.035
+    - _IOR: 0.018
     - _Lenght_Wave_1: 150
     - _Lenght_Wave_2: 100
-    - _Lenght_Wave_3: 30
-    - _Lenght_Wave_4: 65
+    - _Lenght_Wave_3: 60
+    - _Lenght_Wave_4: 45
     - _MashSmooth: -2.4
     - _Power: 1
     - _PowerMacro: 1
@@ -149,8 +151,9 @@ Material:
     - _ScaleNoiseRiges_2: 4
     - _ScaleNoiseShallow: 7.88
     - _ScaleRidgeNoise: 100
+    - _SmoothDepth: 18
     - _SmoothFoam: 0.6
-    - _SmoothWater: 0.85
+    - _SmoothWater: 0.8
     - _SoftnessEmissRiges: 15
     - _SoftnessMask: 35
     - _SoftnessNonEmissRiges: 7
@@ -158,10 +161,10 @@ Material:
     - _SoftnessRidgesColor: 14.92
     - _SoftnessShallow: 55
     - _SoftnessShallowColor: 25
-    - _SoftnessTransition: 520
+    - _SoftnessTransition: 535
     - _SoftnessTransitionColors: 0.018
     - _SoftnessTransitionDepth: 0.018
-    - _SoftnessTransparent: 4
+    - _SoftnessTransparent: 3.2
     - _Speed: 0.02
     - _SpeedFoam: 1
     - _SpeedMacro: 0
@@ -170,11 +173,11 @@ Material:
     - _Speed_Wave_2: -0.4
     - _Speed_Wave_3: 0.32
     - _Speed_Wave_4: 0.34
-    - _Stepness_Wave_1: 0.25
+    - _Stepness_Wave_1: 0.2
     - _Stepness_Wave_2: 0.14
-    - _Stepness_Wave_3: 0.12
-    - _Stepness_Wave_4: 0.11
-    - _StrengeNormal: 0.3
+    - _Stepness_Wave_3: 0.1
+    - _Stepness_Wave_4: 0.15
+    - _StrengeNormal: 0.4
     - _Strenge_Noise: 1
     - _Sub: 0
     - _SubSurfPower: 2
@@ -195,6 +198,7 @@ Material:
     - _ColorShallow: {r: 0, g: 0.75, b: 1, a: 1}
     - _ColorShallowRIges: {r: 0, g: 0.83529425, b: 1, a: 1}
     - _ColorShallowRiges: {r: 0, g: 1, b: 0.75, a: 1}
+    - _ColorTintTransp: {r: 0.45098042, g: 1, b: 1, a: 1}
     - _Color_Deep: {r: 0, g: 0.13815784, b: 0.25, a: 1}
     - _Color_Shallow: {r: 0, g: 0.4000002, b: 0.6, a: 1}
     - _Direction_Wave_1: {r: 1, g: 0, b: 0, a: 0}

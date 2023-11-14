@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ZoneMortire
-  m_Shader: {fileID: -6465566751694194690, guid: 93f1205665a5a124eb62498aeafdb7f9,
+  m_Shader: {fileID: -6465566751694194690, guid: cbe4d53bd6cd6ef43abb9e3cf7f7c272,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
