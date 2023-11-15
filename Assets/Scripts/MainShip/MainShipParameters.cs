@@ -25,23 +25,10 @@ public class MainShipParameters : MonoBehaviour, IDamageable
             Health -= damageAmount;
 
         if (Health <= 0)
-            StartCoroutine(Die());
+            StartCoroutine(buoyController.Die(2f, 3f));
     }
 
-    public IEnumerator Die()
-    {
-        float oldForce = buoyController._floatingStrenge;
-        float newForce = 0;
-        float _time = 0f;
-        while (_time < 1)
-        {
-            _time += 0.5f * Time.deltaTime;
-            buoyController.SetFloatingParameters(Mathf.Lerp(oldForce, newForce, _time), buoyController._depth);
-            yield return null;
-        }
-        yield return new WaitForSeconds(3f);
-        Destroy(gameObject);
-    }
+
 
 
 }

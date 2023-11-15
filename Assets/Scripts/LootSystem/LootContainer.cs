@@ -1,5 +1,4 @@
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI;
 
 public class LootContainer : MonoBehaviour
 {
@@ -16,7 +15,9 @@ public class LootContainer : MonoBehaviour
 
     [Header("Ценность контейнера:")]
     [SerializeField] private uint _goldValue;
-    [SerializeField] private uint _metallValue;
+    [SerializeField] private uint _silverValue;
+    [SerializeField] private uint _coalValue;
+    [SerializeField] private uint _ironValue;
     [SerializeField] private uint _woodValue;
     [SerializeField] private uint _fishValue;
 
@@ -30,13 +31,13 @@ public class LootContainer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_mainShipTransform != null) 
-        { 
-        _distanceBetween = Vector3.Distance(_mainShipTransform.position, gameObject.transform.position);
-        if (_distanceBetween < _findDistance)
-            _go = true;
-        if (_go)
-            PickUp();
+        if (_mainShipTransform != null)
+        {
+            _distanceBetween = Vector3.Distance(_mainShipTransform.position, gameObject.transform.position);
+            if (_distanceBetween < _findDistance)
+                _go = true;
+            if (_go)
+                PickUp();
         }
     }
 
@@ -57,7 +58,7 @@ public class LootContainer : MonoBehaviour
         Vector3 lagLootPosition = Vector3.Lerp(transform.position, _mainShipTransform.position, (_pickUpSpeed * Time.deltaTime) / _distanceBetween);
         gameObject.transform.position = lagLootPosition;
         if (_distanceBetween < _killDistance)
-        { 
+        {
             AccrualResources();
             Destroy(gameObject);
         }
@@ -65,9 +66,11 @@ public class LootContainer : MonoBehaviour
 
     public void AccrualResources()
     {
-        StructCurrency.Gold += (uint)Random.Range(_goldValue/2, _goldValue);
-        StructCurrency.Metall += (uint)Random.Range(0, _metallValue);
-        StructCurrency.Wood += (uint)Random.Range(0, _woodValue);
-        StructCurrency.Fish += (uint)Random.Range(0, _fishValue);
+        StructCurrency.Gold += (uint)Random.Range(_goldValue / 2, _goldValue);
+        StructCurrency.Silver += (uint)Random.Range(_silverValue / 2, _silverValue);
+        StructCurrency.Coal += (uint)Random.Range(_coalValue / 2, _coalValue);
+        StructCurrency.Iron += (uint)Random.Range(_ironValue / 2, _ironValue);
+        StructCurrency.Wood += (uint)Random.Range(_woodValue / 2, _woodValue);
+        StructCurrency.Fish += (uint)Random.Range(_fishValue / 2, _fishValue);
     }
 }

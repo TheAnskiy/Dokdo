@@ -12,11 +12,9 @@ public class ShipMovement : MonoBehaviour
     [Space(10)]
     [SerializeField] private float _rotateForce;
 
-    private float _currRotateForce;
     private float _acceleration;
-
     private float _maxAngular = 1f;
-    private bool _inWater = false;
+
     // Offset Y position centre of mass
     [SerializeField] private float _offset = 2;
 
@@ -34,12 +32,10 @@ public class ShipMovement : MonoBehaviour
         float _waveHeight = OceanShaderParameters.Instance.GetHeightAtPosition(transform.position);
         if (_rigidbody.worldCenterOfMass.y - _offset <= _waveHeight)
         {
-            _inWater = true;
             _rigidbody.drag = 1f;
         }
         else
         {
-            _inWater = false;
             _rigidbody.drag = 0.2f;
         }
 
