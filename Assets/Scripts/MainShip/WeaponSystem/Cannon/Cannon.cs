@@ -7,7 +7,6 @@ using UnityEditor;
 
 public class Cannon : MonoBehaviour
 {
-
     [SerializeField] private Transform _target;
     [SerializeField] private Transform _horizontal;
     [SerializeField] private Transform _vertical;
@@ -32,6 +31,11 @@ public class Cannon : MonoBehaviour
 
     private void Update()
     { 
+        if (_target == null || _target.IsInverted())
+        {
+            StopAttack();
+            return;
+        }
 
         Vector3 _toTarget = _target.position - transform.position;
         float distanceToTarget = _toTarget.magnitude;
@@ -73,6 +77,12 @@ public class Cannon : MonoBehaviour
         } while (true);
     }
 
+    public void StopAttack()
+    {
+        if (_coroutineAttack != null)
+            StopCoroutine(_coroutineAttack);
+    }
+
     public void SetTarget(Transform newTarget)
     {
         if (newTarget == null)
@@ -92,14 +102,11 @@ public class Cannon : MonoBehaviour
 
     private float NormalizeAngle(float angle)
     {
-        if (angle < -180.0f)
-        {
-            angle += 360;
-        }
-        else if (angle > 180.0f)
-        {
-            angle -= 360.0f;
-        }
+        if (angle > 180.0f) 
+            return angle - 360.0f;
+
+        if (angle < -180.0f) 
+            return angle + 360.0f;
 
         return angle;
     }
@@ -165,9 +172,10 @@ public class Cannon : MonoBehaviour
 
 #if UNITY_EDITOR
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         DrawFiringSector();
+
     }
 
     private void DrawFiringSector()
