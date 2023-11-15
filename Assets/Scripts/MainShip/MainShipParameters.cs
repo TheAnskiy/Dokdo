@@ -49,7 +49,7 @@ public class MainShipParameters : MonoBehaviour, IDamageable
 
             if (_timerInverted < -_lifeTimeInverted && _isDead == false)
             {
-                StartCoroutine(Die());
+                StartCoroutine(buoyController.Die(2f, 3f));
             }
         }
         else if (_isInverted == true)
