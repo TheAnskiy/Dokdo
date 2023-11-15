@@ -16,12 +16,13 @@ public class EnemyUI : MonoBehaviour
         maxValue = _healthSlider.sizeDelta.x;
         _enemy = GetComponentInParent<TestAI>();
 
-        _camera = Camera.main; // Надо сделать другой доступ к камере
+        _camera = Global.Instance.MainCamera; // Надо сделать другой доступ к камере
     }
 
     private void LateUpdate()
     {
-        transform.LookAt(_camera.transform);
+        if (_camera != null)
+            transform.LookAt(_camera.transform);
     }
 
     private void UpdateHealthSlider(float maxHealth, float currentHealth)

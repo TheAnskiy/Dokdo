@@ -7,6 +7,11 @@ public class MainShipParameters : MonoBehaviour, IDamageable
     //[Header("Параметры живучести:")]
     [field: SerializeField] public float Health { get; private set; } = 100.0f;
 
+    private bool _isInverted = false;
+    private float _timerInverted = 0.0f;
+    private float _lifeTimeInverted = 5.0f;
+    private bool _isDead = false;
+
     // Start is called before the first frame updates
     void Start()
     {
@@ -14,9 +19,9 @@ public class MainShipParameters : MonoBehaviour, IDamageable
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-
+        KillInverted();
     }
 
     public void TakeDamage(GameObject damageCauser, float damageAmount)
@@ -43,5 +48,27 @@ public class MainShipParameters : MonoBehaviour, IDamageable
         Destroy(gameObject);
     }
 
+    private void KillInverted()
+    {
+        if (transform.IsInverted())
+        {
+            if (_isInverted == false)
+            {
 
+                _isInverted = true;
+            }
+
+            _timerInverted -= Time.fixedDeltaTime;
+
+            if (_timerInverted < -_lifeTimeInverted && _isDead == false)
+            {
+                StartCoroutine(Die());
+            }
+        }
+        else if (_isInverted == true)
+        {
+            _isInverted = false;
+            _timerInverted = 0.0f;
+        }
+    }
 }

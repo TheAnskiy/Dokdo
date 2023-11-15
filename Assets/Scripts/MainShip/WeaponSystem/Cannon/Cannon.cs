@@ -31,8 +31,11 @@ public class Cannon : MonoBehaviour
 
     private void Update()
     { 
-        if (_target == null) 
+        if (_target == null || _target.IsInverted())
+        {
+            StopAttack();
             return;
+        }
 
         Vector3 _toTarget = _target.position - transform.position;
         float distanceToTarget = _toTarget.magnitude;
@@ -72,6 +75,12 @@ public class Cannon : MonoBehaviour
             core.SetSpeed(_speedBullet);
             yield return new WaitForSeconds(_timeBetweenShots);
         } while (true);
+    }
+
+    public void StopAttack()
+    {
+        if (_coroutineAttack != null)
+            StopCoroutine(_coroutineAttack);
     }
 
     public void SetTarget(Transform newTarget)

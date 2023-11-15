@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidBody: {fileID: 918121785}
-  _isSide: 1
+  _isReturn: 0
   _strengeFloating: 15
   _depthBeforeSubmerged: 1.5
 --- !u!1 &417221331
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidBody: {fileID: 918121785}
-  _isSide: 1
+  _isReturn: 0
   _strengeFloating: 15
   _depthBeforeSubmerged: 1.5
 --- !u!1 &1236972833
@@ -214,7 +214,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 451bf61f93b72514ba7f480c037521fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _override: 1
   buoy:
   - {fileID: 1593739390}
   - {fileID: 1385163983}
@@ -267,7 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidBody: {fileID: 918121785}
-  _isSide: 0
+  _isReturn: 0
   _strengeFloating: 15
   _depthBeforeSubmerged: 1.5
 --- !u!1 &1438141815
@@ -315,7 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidBody: {fileID: 918121785}
-  _isSide: 0
+  _isReturn: 0
   _strengeFloating: 15
   _depthBeforeSubmerged: 1.5
 --- !u!1 &1593739388
@@ -363,7 +362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidBody: {fileID: 918121785}
-  _isSide: 0
+  _isReturn: 0
   _strengeFloating: 15
   _depthBeforeSubmerged: 1.5
 --- !u!1 &1778564321
@@ -411,7 +410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidBody: {fileID: 918121785}
-  _isSide: 0
+  _isReturn: 0
   _strengeFloating: 15
   _depthBeforeSubmerged: 1.5
 --- !u!1 &3077002625749276789
@@ -901,14 +900,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2fffe8bddd42144dbada2dbfef6630a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Health>k__BackingField: 50
+  _state: 0
   _target: {fileID: 0}
+  _patrolPoints: []
   _startDistance: 50
+  _distanceDeath: 500
+  <Health>k__BackingField: 50
   _acceleration: 6000
   _pidForRotation:
     _kP: 0.8
     _kI: 0.01
     _kD: 0
+  _lootAfterDeath: []
 --- !u!54 &918121785
 Rigidbody:
   m_ObjectHideFlags: 0
