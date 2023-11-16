@@ -39,18 +39,18 @@ public class BuoyController : MonoBehaviour
         }
     }
 
-    public IEnumerator Die(float timeFlooding, float timeToDestroy)
+    public IEnumerator Flooding(float timeFlooding, float delayToCallEndFlooding, System.Action endFlooding)
     {
         float oldForce = _floatingStrenge;
         float newForce = 0;
         float _time = 0f;
         while (_time < 1)
         {
-            _time += (1/timeFlooding) * Time.deltaTime;
+            _time += (1 / timeFlooding) * Time.deltaTime;
             SetFloatingParameters(Mathf.Lerp(oldForce, newForce, _time), _depth);
             yield return null;
         }
-        yield return new WaitForSeconds(timeToDestroy);
-        Destroy(gameObject);
+        yield return new WaitForSeconds(delayToCallEndFlooding);
+        endFlooding();
     }
 }

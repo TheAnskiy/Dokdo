@@ -19,11 +19,6 @@ public class BrockenShipZone : MonoBehaviour
         buoyController = GetComponent<BuoyController>();
     }
 
-    private void Update()
-    {
-
-    }
-
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
@@ -44,7 +39,11 @@ public class BrockenShipZone : MonoBehaviour
         StructCurrency.Wood += (uint)Random.Range(_woodValue / 2, _woodValue);
         StructCurrency.Fish += (uint)Random.Range(_fishValue / 2, _fishValue);
 
-        StartCoroutine(buoyController.Die(2f, 3f));
+        Die();
+    }
 
+    public void Die()
+    {
+        StartCoroutine(buoyController.Flooding(2f, 3f, () => Destroy(gameObject)));
     }
 }

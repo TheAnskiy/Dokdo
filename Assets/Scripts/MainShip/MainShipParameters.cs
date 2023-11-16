@@ -12,13 +12,6 @@ public class MainShipParameters : MonoBehaviour, IDamageable
     private float _lifeTimeInverted = 5.0f;
     private bool _isDead = false;
 
-    // Start is called before the first frame updates
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void FixedUpdate()
     {
         KillInverted();
@@ -30,10 +23,8 @@ public class MainShipParameters : MonoBehaviour, IDamageable
             Health -= damageAmount;
 
         if (Health <= 0)
-            StartCoroutine(buoyController.Die(2f, 3f));
+            Die();
     }
-
-
 
     private void KillInverted()
     {
@@ -49,7 +40,7 @@ public class MainShipParameters : MonoBehaviour, IDamageable
 
             if (_timerInverted < -_lifeTimeInverted && _isDead == false)
             {
-                StartCoroutine(buoyController.Die(2f, 3f));
+                Die();
             }
         }
         else if (_isInverted == true)
@@ -57,5 +48,10 @@ public class MainShipParameters : MonoBehaviour, IDamageable
             _isInverted = false;
             _timerInverted = 0.0f;
         }
+    }
+
+    private void Die()
+    {
+        StartCoroutine(buoyController.Flooding(2f, 3f, () => Destroy(gameObject)));
     }
 }

@@ -192,7 +192,7 @@ public class TestAI : MonoBehaviour, IDamageable
 
             if (_timerInverted < -_lifeTimeInverted && _isDead == false)
             {
-                StartCoroutine(Die());
+                Die();
             }
         }
         else if (_isInverted == true)
@@ -208,25 +208,18 @@ public class TestAI : MonoBehaviour, IDamageable
         OnHealthChanged?.Invoke(MaxHealth, Health);
 
         if (Health <= 0)
-            StartCoroutine(Die());
+            Die();
     }
 
-    public IEnumerator Die()
+    public void Die()
     {
         _isDead = true;
 
-        float oldForce = _buoyController._floatingStrenge;
-        float newForce = 0;
-        float _time = 0f;
-        while (_time < 1)
+        StartCoroutine(_buoyController.Flooding(2, 3, () =>
         {
-            _time += 0.5f * Time.deltaTime;
-            _buoyController.SetFloatingParameters(Mathf.Lerp(oldForce, newForce, _time), _buoyController._depth);
-            yield return null;
-        }
-        yield return new WaitForSeconds(3f);
-        SpawnLoot();
-        Destroy(gameObject);
+            SpawnLoot();
+            Destroy(gameObject);
+        }));
     }
 
 
